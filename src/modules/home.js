@@ -103,4 +103,4 @@ const loadHome = () => {
     main.appendChild(songsList);
 };
 
-export default loadHome;
+export { loadHome, addCards, makeMusicCards };
