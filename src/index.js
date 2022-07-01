@@ -5,5 +5,3 @@ const loadWebpage = () => {
 };
 
 loadWebpage();
-
-console.log("Working fine!");

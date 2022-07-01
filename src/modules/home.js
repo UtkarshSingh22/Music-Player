@@ -56,6 +56,7 @@ const makeMusicCards = (source, name, number) => {
 
 const loadHome = () => {
     const main = document.querySelector(".main");
+    main.textContent = "";
 
     // song's image and name
     const src1 = "",
