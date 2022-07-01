@@ -53,4 +53,15 @@ const makeMusicCards = (source, name, number) => {
     return mainCard;
 };
 
-const mediaPlayer = (source) => {};
+const mediaPlayer = (source) => {
+    const music = document.createElement("audio");
+    music.src = source;
+    music.setAttribute("controls", "controls");
+
+    return music;
+};
+
+const loadMusicPage = () => {
+    const main = document.querySelector(".main");
+    main.textContent = "";
+};
