@@ -54,6 +54,14 @@ const makeMusicCards = (source, name, number) => {
     return mainCard;
 };
 
+const addSearchBar = () => {
+    const bar = document.createElement("input");
+    bar.setAttribute("type", "search");
+    bar.classList = "search-bar";
+
+    return bar;
+};
+
 const loadHome = () => {
     const main = document.querySelector(".main");
     main.textContent = "";
@@ -87,8 +95,11 @@ const loadHome = () => {
     const bgImage = buildContentImg(illusSrc);
     const homeMsg = buildContent();
 
+    const searchBar = addSearchBar();
+
     main.appendChild(bgImage);
     main.appendChild(homeMsg);
+    main.appendChild(searchBar);
     main.appendChild(songsList);
 };
 

@@ -1,7 +1,3 @@
-import loadHome from "./modules/home";
-
-const loadWebpage = () => {
-    loadHome();
-};
+import loadWebpage from "./modules/webpage";
 
 loadWebpage();
