@@ -64,7 +64,10 @@ const addSearchBar = () => {
 
 const loadHome = () => {
     const main = document.querySelector(".main");
-    main.textContent = "";
+
+    while (main.hasChildNodes()) {
+        main.removeChild(main.firstChild);
+    }
 
     // song's image and name
     const src1 = "",
@@ -103,4 +106,4 @@ const loadHome = () => {
     main.appendChild(songsList);
 };
 
-export { loadHome, addCards, makeMusicCards };
+export { loadHome };

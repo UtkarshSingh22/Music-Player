@@ -1,4 +1,7 @@
 const buildSongInfo = (source, name, writer) => {
+    const data = document.createElement("div");
+    data.classList = "songData";
+
     const songImg = document.createElement("img");
     songImg.classList = "mainImg";
     songImg.src = source;
@@ -11,12 +14,9 @@ const buildSongInfo = (source, name, writer) => {
     songWriter.classList = "writer";
     songWriter.textContent = writer;
 
-    return { songName, songWriter, songImg };
-};
-
-const songData = () => {
-    const data = document.createElement("div");
-    data.classList = "songData";
+    data.appendChild(songImg);
+    data.appendChild(songName);
+    data.appendChild(songWriter);
 
     return data;
 };
@@ -61,7 +61,58 @@ const mediaPlayer = (source) => {
     return music;
 };
 
+const buildContentImg = (source) => {
+    const homeBgImg = document.createElement("img");
+    homeBgImg.setAttribute("class", "content-img");
+    homeBgImg.src = source;
+
+    return homeBgImg;
+};
+
 const loadMusicPage = () => {
     const main = document.querySelector(".main");
-    main.textContent = "";
+
+    while (main.hasChildNodes()) {
+        main.removeChild(main.firstChild);
+    }
+
+    // song's image and name
+    const src1 = "",
+        src2 = "",
+        src3 = "";
+    const name1 = "song 1",
+        name2 = "song 2",
+        name3 = "song 3";
+
+    // home-background image src
+    const illusSrc = "";
+
+    const card1 = makeMusicCards(src1, name1, 1);
+    const card2 = makeMusicCards(src2, name2, 2);
+    const card3 = makeMusicCards(src3, name3, 3);
+
+    const cardsContainer = addCards();
+    cardsContainer.appendChild(card1);
+    cardsContainer.appendChild(card2);
+    cardsContainer.appendChild(card3);
+
+    // main song data
+    let src = "./",
+        name = "",
+        writer = "";
+
+    const songInfo = buildSongInfo(src, name, writer);
+
+    const lyrics = getLyrics();
+
+    const musicPlayer = mediaPlayer(src);
+    const bgImage = buildContentImg(illusSrc);
+
+    main.appendChild(bgImage);
+    main.appendChild(songInfo);
+    main.appendChild(lyrics);
+    main.appendChild(cardsContainer);
+    main.appendChild(musicPlayer);
 };
+
+export default loadMusicPage;

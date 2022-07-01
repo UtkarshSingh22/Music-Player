@@ -1,7 +1,9 @@
-import loadHome from "./modules/home";
+//import loadHome from "./modules/home";
+import loadMusicPage from "./musicPage";
 
 const loadWebpage = () => {
-    loadHome();
+    //loadHome();
+    loadMusicPage();
 };
 
 export default loadWebpage;
