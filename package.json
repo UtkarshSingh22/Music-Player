@@ -4,13 +4,15 @@
     "description": "",
     "main": "index.js",
     "scripts": {
+        "build": "webpack",
+        "watch": "webpack --watch",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/UtkarshSingh22/Music-Player.git"
     },
-    "author": "",
+    "author": "Utkarsh Singh",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/UtkarshSingh22/Music-Player/issues"
