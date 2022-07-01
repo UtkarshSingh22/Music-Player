@@ -38,18 +38,15 @@ const addCards = () => {
 
 const makeMusicCards = (source, name, number) => {
     const songImg = document.createElement("img");
-    songImg.classList = "card-img";
-    songImg.classList = `card-${number}-img`;
+    songImg.classList = `card-img card-${number}-img`;
     songImg.src = source;
 
     const songName = document.createElement("div");
-    songName.classList = "music-name";
-    songName.classList = `name-${number}`;
+    songName.classList = `music-name name-${number}`;
     songName.textContent = name;
 
     const mainCard = document.createElement("div");
-    mainCard.classList = "cards";
-    mainCard.classList = `card-${number}`;
+    mainCard.classList = `cards card-${number}`;
 
     mainCard.appendChild(songImg);
     mainCard.appendChild(songName);
