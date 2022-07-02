@@ -1,3 +1,5 @@
+import songList from "./songsData";
+
 const buildContentImg = (source) => {
     const homeBgImg = document.createElement("img");
     homeBgImg.setAttribute("class", "content-img");
