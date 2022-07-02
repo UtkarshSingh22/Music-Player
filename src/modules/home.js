@@ -49,7 +49,7 @@ const makeMusicCards = (source, name, artist, number) => {
 
     const artistName = document.createElement("div");
     songName.classList = `artist-name artistName-${number}`;
-    songName.textContent = artist;
+    songName.textContent += " - " + artist;
 
     const mainCard = document.createElement("div");
     mainCard.classList = `cards card-${number}`;
@@ -81,14 +81,15 @@ const loadHome = () => {
 
     const cardsContainer = addCards();
 
-    console.log(songList[0].songSrc);
+    console.log(songList[0].name);
     // song's image and name
     let index = 0;
     while (index < 3) {
         const src = songList[index].imageSrc;
         const name = songList[index].name;
+        const artist = songList[index].artist;
 
-        const card = makeMusicCards(src, name, index + 1);
+        const card = makeMusicCards(src, name, artist, index + 1);
         cardsContainer.appendChild(card);
 
         index++;
