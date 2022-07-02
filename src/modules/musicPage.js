@@ -1,3 +1,5 @@
+import songList from "./songsData";
+
 const buildSongInfo = (source, name, writer) => {
     const data = document.createElement("div");
     data.classList = "songData";
