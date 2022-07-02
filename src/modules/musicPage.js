@@ -1,4 +1,5 @@
-import songList from "./songsData";
+import songList from "./FunctionsAndData/songsData";
+import makeMusicCards from "./FunctionsAndData/makeMusicCards";
 
 const buildSongInfo = (source, name, writer) => {
     const data = document.createElement("div");
@@ -37,24 +38,6 @@ const addCards = () => {
     return cardsContainer;
 };
 
-const makeMusicCards = (source, name, number) => {
-    const songImg = document.createElement("img");
-    songImg.classList = `cardImg card-${number}`;
-    songImg.src = source;
-
-    const songName = document.createElement("div");
-    songName.classList = `musicName songName-${number}`;
-    songName.textContent = name;
-
-    const mainCard = document.createElement("div");
-    mainCard.classList = `cardsList cardNum-${number}`;
-
-    mainCard.appendChild(songImg);
-    mainCard.appendChild(songName);
-
-    return mainCard;
-};
-
 const mediaPlayer = (source) => {
     const music = document.createElement("audio");
     music.src = source;
@@ -78,25 +61,22 @@ const loadMusicPage = () => {
         main.removeChild(main.firstChild);
     }
 
-    // song's image and name
-    const src1 = "",
-        src2 = "",
-        src3 = "";
-    const name1 = "song 1",
-        name2 = "song 2",
-        name3 = "song 3";
-
     // home-background image src
     const illusSrc = "";
 
-    const card1 = makeMusicCards(src1, name1, 1);
-    const card2 = makeMusicCards(src2, name2, 2);
-    const card3 = makeMusicCards(src3, name3, 3);
-
     const cardsContainer = addCards();
-    cardsContainer.appendChild(card1);
-    cardsContainer.appendChild(card2);
-    cardsContainer.appendChild(card3);
+
+    let index = 3;
+    while (index < 6) {
+        const src = songList[index].imageSrc;
+        const name = songList[index].name;
+        const artist = songList[index].artist;
+
+        const card = makeMusicCards(src, name, artist, index + 1);
+        cardsContainer.appendChild(card);
+
+        index++;
+    }
 
     // main song data
     let src = "/dist/Sample-songs/Sub Urban - Cradles [NCS Release].mp3",

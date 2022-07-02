@@ -1,4 +1,5 @@
-import songList from "./songsData";
+import songList from "./FunctionsAndData/songsData";
+import makeMusicCards from "./FunctionsAndData/makeMusicCards";
 
 const buildContentImg = (source) => {
     const homeBgImg = document.createElement("img");
@@ -38,29 +39,6 @@ const addCards = () => {
     return cardsContainer;
 };
 
-const makeMusicCards = (source, name, artist, number) => {
-    const songImg = document.createElement("img");
-    songImg.classList = `card-img card-${number}-img`;
-    songImg.src = source;
-
-    const songName = document.createElement("div");
-    songName.classList = `music-name name-${number}`;
-    songName.textContent = name;
-
-    const artistName = document.createElement("div");
-    songName.classList = `artist-name artistName-${number}`;
-    songName.textContent += " - " + artist;
-
-    const mainCard = document.createElement("div");
-    mainCard.classList = `cards card-${number}`;
-
-    mainCard.appendChild(songImg);
-    mainCard.appendChild(songName);
-    mainCard.appendChild(artistName);
-
-    return mainCard;
-};
-
 const addSearchBar = () => {
     const bar = document.createElement("input");
     bar.setAttribute("type", "search");
@@ -81,7 +59,6 @@ const loadHome = () => {
 
     const cardsContainer = addCards();
 
-    console.log(songList[0].name);
     // song's image and name
     let index = 0;
     while (index < 3) {
