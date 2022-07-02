@@ -1,4 +1,4 @@
-const buildSongInfo = (source, name, writer) => {
+const buildSongInfo = (source, name, artist) => {
     const data = document.createElement("div");
     data.classList = "songData";
 
@@ -11,8 +11,8 @@ const buildSongInfo = (source, name, writer) => {
     songName.textContent = name;
 
     const songWriter = document.createElement("div");
-    songWriter.classList = "writer";
-    songWriter.textContent = writer;
+    songWriter.classList = "artist";
+    songWriter.textContent = artist;
 
     data.appendChild(songImg);
     data.appendChild(songName);
