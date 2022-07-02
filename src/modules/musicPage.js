@@ -97,7 +97,7 @@ const loadMusicPage = () => {
     cardsContainer.appendChild(card3);
 
     // main song data
-    let src = "/dist/Sample-songs/song1.mp3",
+    let src = "/dist/Sample-songs/Sub Urban - Cradles [NCS Release].mp3",
         name = "",
         writer = "";
 
