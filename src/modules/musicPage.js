@@ -1,6 +1,7 @@
 import songList from "./SongsList/songsData";
 import makeMusicCards from "./FunctionsAndData/makeMusicCards";
 import buildSongInfo from "./FunctionsAndData/buildCurrentMusicCard.js";
+import buildPlayer from "./FunctionsAndData/buildMusicPlayer";
 
 const getLyrics = () => {
     const lyrics = document.createElement("div");
@@ -16,13 +17,13 @@ const addCards = () => {
     return cardsContainer;
 };
 
-const mediaPlayer = (source) => {
-    const music = document.createElement("audio");
-    music.src = source;
-    music.setAttribute("controls", "controls");
+// const mediaPlayer = (source) => {
+//     const music = document.createElement("audio");
+//     music.src = source;
+//     music.setAttribute("controls", "controls");
 
-    return music;
-};
+//     return music;
+// };
 
 const buildContentImg = (source) => {
     const homeBgImg = document.createElement("img");
@@ -56,6 +57,8 @@ const loadMusicPage = () => {
         index++;
     }
 
+    const bgImage = buildContentImg(illusSrc);
+
     // TODO: Add function for getting below data after triggered event listeners and
     // send the data in buildSongInfo func.
     let src = "/dist/sample-songs/Sub Urban - Cradles [NCS Release].mp3",
@@ -66,8 +69,7 @@ const loadMusicPage = () => {
 
     const lyrics = getLyrics();
 
-    const musicPlayer = mediaPlayer(src);
-    const bgImage = buildContentImg(illusSrc);
+    // const musicPlayer = mediaPlayer(src);
 
     main.appendChild(bgImage);
     main.appendChild(songInfo);
