@@ -1,28 +1,6 @@
-import songList from "./FunctionsAndData/songsData";
+import songList from "./SongsList/songsData";
 import makeMusicCards from "./FunctionsAndData/makeMusicCards";
-
-const buildSongInfo = (source, name, writer) => {
-    const data = document.createElement("div");
-    data.classList = "songData";
-
-    const songImg = document.createElement("img");
-    songImg.classList = "mainImg";
-    songImg.src = source;
-
-    const songName = document.createElement("div");
-    songName.classList = "songName";
-    songName.textContent = name;
-
-    const songWriter = document.createElement("div");
-    songWriter.classList = "writer";
-    songWriter.textContent = writer;
-
-    data.appendChild(songImg);
-    data.appendChild(songName);
-    data.appendChild(songWriter);
-
-    return data;
-};
+import buildSongInfo from "./FunctionsAndData/buildCurrentMusicCard.js";
 
 const getLyrics = () => {
     const lyrics = document.createElement("div");
@@ -78,8 +56,9 @@ const loadMusicPage = () => {
         index++;
     }
 
-    // main song data
-    let src = "/dist/Sample-songs/Sub Urban - Cradles [NCS Release].mp3",
+    // TODO: Add function for getting below data after triggered event listeners and
+    // send the data in buildSongInfo func.
+    let src = "/dist/sample-songs/Sub Urban - Cradles [NCS Release].mp3",
         name = "",
         writer = "";
 
