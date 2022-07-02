@@ -38,7 +38,7 @@ const addCards = () => {
     return cardsContainer;
 };
 
-const makeMusicCards = (source, name, number) => {
+const makeMusicCards = (source, name, artist, number) => {
     const songImg = document.createElement("img");
     songImg.classList = `card-img card-${number}-img`;
     songImg.src = source;
@@ -47,11 +47,16 @@ const makeMusicCards = (source, name, number) => {
     songName.classList = `music-name name-${number}`;
     songName.textContent = name;
 
+    const artistName = document.createElement("div");
+    songName.classList = `artist-name artistName-${number}`;
+    songName.textContent = artist;
+
     const mainCard = document.createElement("div");
     mainCard.classList = `cards card-${number}`;
 
     mainCard.appendChild(songImg);
     mainCard.appendChild(songName);
+    mainCard.appendChild(artistName);
 
     return mainCard;
 };
@@ -71,25 +76,23 @@ const loadHome = () => {
         main.removeChild(main.firstChild);
     }
 
-    // song's image and name
-    const src1 = "",
-        src2 = "",
-        src3 = "";
-    const name1 = "song 1",
-        name2 = "song 2",
-        name3 = "song 3";
-
     // home-background image src
     const illusSrc = "";
 
-    const card1 = makeMusicCards(src1, name1, 1);
-    const card2 = makeMusicCards(src2, name2, 2);
-    const card3 = makeMusicCards(src3, name3, 3);
-
     const cardsContainer = addCards();
-    cardsContainer.appendChild(card1);
-    cardsContainer.appendChild(card2);
-    cardsContainer.appendChild(card3);
+
+    console.log(songList[0].songSrc);
+    // song's image and name
+    let index = 0;
+    while (index < 3) {
+        const src = songList[index].imageSrc;
+        const name = songList[index].name;
+
+        const card = makeMusicCards(src, name, index + 1);
+        cardsContainer.appendChild(card);
+
+        index++;
+    }
 
     const listHead = addHead();
 
