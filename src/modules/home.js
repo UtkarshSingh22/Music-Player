@@ -106,4 +106,4 @@ const loadHome = () => {
     main.appendChild(songsList);
 };
 
-export { loadHome };
+export default loadHome;
