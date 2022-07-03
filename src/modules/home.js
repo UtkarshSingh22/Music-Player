@@ -1,4 +1,4 @@
-import songList from "./FunctionsAndData/songsData";
+import songList from "./SongsList/songsData";
 import makeMusicCards from "./FunctionsAndData/makeMusicCards";
 
 const buildContentImg = (source) => {

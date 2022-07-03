@@ -21,3 +21,8 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.control-img {
+    width: 40px;
+    height: auto;
+}
