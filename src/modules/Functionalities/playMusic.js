@@ -7,6 +7,7 @@
 const playSong = () => {
     const src = "/dist/sample-songs/Sub Urban - Cradles [NCS Release].mp3";
     let currentSong = new Audio(src);
+    currentSong.play();
 };
 
 const playBtnFunctioning = () => {
