@@ -1,6 +1,6 @@
 import songList from "./SongsList/songsData";
 import makeMusicCards from "./Functionalities/makeMusicCards";
-import buildSongInfo from "./Functionalities/buildCurrentMusicCard.js.js";
+import buildSongInfo from "./Functionalities/buildCurrentMusicCard.js";
 import buildPlayer from "./Functionalities/buildMusicPlayer";
 import addFunctionalityToCardsOnMusicPage from "./User Interface/musicPageUI";
 

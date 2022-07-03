@@ -11,6 +11,7 @@ const getClicked = (e) => {
                 songIndex = i;
             }
         }
+
         //TODO: Play music according to index
         loadMusicPage();
     } else {
