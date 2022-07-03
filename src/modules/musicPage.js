@@ -1,7 +1,8 @@
 import songList from "./SongsList/songsData";
-import makeMusicCards from "./FunctionsAndData/makeMusicCards";
-import buildSongInfo from "./FunctionsAndData/buildCurrentMusicCard.js";
-import buildPlayer from "./FunctionsAndData/buildMusicPlayer";
+import makeMusicCards from "./Functionalities/makeMusicCards";
+import buildSongInfo from "./Functionalities/buildCurrentMusicCard.js.js";
+import buildPlayer from "./Functionalities/buildMusicPlayer";
+import addFunctionalityToCardsOnMusicPage from "./User Interface/musicPageUI";
 
 const getLyrics = () => {
     const lyrics = document.createElement("div");
@@ -68,6 +69,8 @@ const loadMusicPage = () => {
     main.appendChild(lyrics);
     main.appendChild(cardsContainer);
     main.appendChild(musicPlayer);
+
+    addFunctionalityToCardsOnMusicPage();
 };
 
 export default loadMusicPage;

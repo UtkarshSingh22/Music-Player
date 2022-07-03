@@ -1,5 +1,5 @@
 import songList from "./SongsList/songsData";
-import makeMusicCards from "./FunctionsAndData/makeMusicCards";
+import makeMusicCards from "./Functionalities/makeMusicCards";
 import addFunctionalityToMusicCards from "./User Interface/homeUI";
 
 const buildContentImg = (source) => {
