@@ -48,13 +48,13 @@ const addControls = () => {
     nextBtnImg.src = "/dist/icons-and-images/next-svgrepo-com.svg";
     playBtnImg.src = "/dist/icons-and-images/play-svgrepo-com.svg";
 
-    playBtnImg.classList = "playBtnImg control-img";
-    nextBtnImg.classList = "nextBtnImg control-img";
-    prevBtnImg.classList = "prevBtnImg control-img";
+    playBtnImg.classList.add("playBtnImg", "control-img");
+    nextBtnImg.classList.add("nextBtnImg", "control-img");
+    prevBtnImg.classList.add("prevBtnImg", "control-img");
 
-    prevBtn.classList = "prevBtn controlBtn";
-    playBtn.classList = "playBtn controlBtn";
-    nextBtn.classList = "nextBtn controlBtn";
+    prevBtn.classList.add("prevBtn", "controlBtn");
+    playBtn.classList.add("playBtn", "controlBtn");
+    nextBtn.classList.add("nextBtn", "controlBtn");
 
     prevBtn.appendChild(prevBtnImg);
     playBtn.appendChild(playBtnImg);

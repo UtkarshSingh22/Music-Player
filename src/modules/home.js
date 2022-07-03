@@ -1,5 +1,6 @@
 import songList from "./SongsList/songsData";
 import makeMusicCards from "./FunctionsAndData/makeMusicCards";
+import addFunctionalityToMusicCards from "./User Interface/homeUI";
 
 const buildContentImg = (source) => {
     const homeBgImg = document.createElement("img");
@@ -87,6 +88,8 @@ const loadHome = () => {
     main.appendChild(homeMsg);
     main.appendChild(searchBar);
     main.appendChild(songsList);
+
+    addFunctionalityToMusicCards();
 };
 
 export default loadHome;
