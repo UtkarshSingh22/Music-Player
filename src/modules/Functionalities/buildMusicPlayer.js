@@ -10,6 +10,7 @@ const addMusicRangeBar = () => {
     const range = document.createElement("input");
     range.setAttribute("type", "range");
     range.classList = "musicBar";
+    range.value = 0;
 
     return range;
 };
@@ -47,6 +48,7 @@ const addControls = () => {
     const playBtn = document.createElement("div");
 
     const volume = document.createElement("input");
+    volume.value = 100;
 
     const prevBtnImg = document.createElement("img");
     const nextBtnImg = document.createElement("img");
