@@ -7,10 +7,11 @@ import songList from "../SongsList/songsData";
 // };
 
 const addControlsFunctionality = (index) => {
-    let allAudiosBeingPlayed = document.querySelectorAll("audio");
-    for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
-        allAudiosBeingPlayed[i].ended;
-    }
+    // let allAudiosBeingPlayed = document.querySelectorAll("audio");
+    // for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
+    //     allAudiosBeingPlayed[i].pause();
+    //     document.removeChild(allAudiosBeingPlayed[i]);
+    // }
 
     let currSongSrc = songList[index].songSrc;
 
@@ -44,6 +45,26 @@ const addControlsFunctionality = (index) => {
     musicBar.addEventListener("click", (e) => {
         currentSong.currentTime =
             (e.offsetX / e.srcElement.clientWidth) * currentSong.duration;
+    });
+
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
+
+    nextBtn.addEventListener("click", () => {
+        if (index == songList.length - 1) {
+            index = 0;
+        } else {
+            index++;
+        }
+        let allAudiosBeingPlayed = document.querySelectorAll("audio");
+        for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
+            allAudiosBeingPlayed[i].pause();
+            document.removeChild(allAudiosBeingPlayed[i]);
+        }
+
+        currSongSrc = songList[index].songSrc;
+
+        currentSong = new Audio(currSongSrc);
     });
 };
 

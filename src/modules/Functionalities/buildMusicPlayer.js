@@ -1,3 +1,11 @@
+const addAudioElement = () => {
+    let audio = document.createElement("audio");
+    audio.classList = "audioElement";
+    audio.src = "";
+
+    return audio;
+};
+
 const addMusicRangeBar = () => {
     const range = document.createElement("input");
     range.setAttribute("type", "range");
@@ -77,6 +85,7 @@ const buildPlayer = () => {
     const mediaPlayer = document.createElement("div");
     mediaPlayer.classList = "mediaPlayer";
 
+    mediaPlayer.appendChild(addAudioElement());
     mediaPlayer.appendChild(addSongInfo());
     mediaPlayer.appendChild(addMusicRangeBar());
     mediaPlayer.appendChild(addControls());
