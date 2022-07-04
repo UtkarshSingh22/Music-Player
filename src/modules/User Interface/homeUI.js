@@ -1,5 +1,6 @@
 import loadMusicPage from "../musicPage";
 import songList from "../SongsList/songsData";
+import addControlsFunctionality from "../Functionalities/playMusic";
 
 const getClicked = (e) => {
     if (e.target.parentElement.className == "cards") {
@@ -12,8 +13,8 @@ const getClicked = (e) => {
             }
         }
 
-        //TODO: Play music according to index
         loadMusicPage();
+        addControlsFunctionality(songIndex);
     } else {
         return;
     }

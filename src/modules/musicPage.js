@@ -3,7 +3,6 @@ import makeMusicCards from "./Functionalities/makeMusicCards";
 import buildSongInfo from "./Functionalities/buildCurrentMusicCard.js";
 import buildPlayer from "./Functionalities/buildMusicPlayer";
 import addFunctionalityToCardsOnMusicPage from "./User Interface/musicPageUI";
-import addControlFunctionality from "./Functionalities/playMusic";
 
 const getLyrics = () => {
     const lyrics = document.createElement("div");
@@ -72,7 +71,6 @@ const loadMusicPage = () => {
     main.appendChild(musicPlayer);
 
     addFunctionalityToCardsOnMusicPage();
-    addControlFunctionality();
 };
 
 export default loadMusicPage;

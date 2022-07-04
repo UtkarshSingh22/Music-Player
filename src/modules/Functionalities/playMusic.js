@@ -1,3 +1,4 @@
+import songList from "../SongsList/songsData";
 // const getAccess = () => {
 //     const prevBtn = document.querySelector(".prevBtn");
 //     const nextBtn = document.querySelector(".nextBtn");
@@ -5,9 +6,15 @@
 //     const volume = document.querySelector(".volume");
 // };
 
-const addControlsFunctionality = () => {
-    const src = "/dist/sample-songs/Sub Urban - Cradles [NCS Release].mp3";
-    let currentSong = new Audio(src);
+const addControlsFunctionality = (index) => {
+    let allAudiosBeingPlayed = document.querySelectorAll("audio");
+    for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
+        allAudiosBeingPlayed[i].ended;
+    }
+
+    let currSongSrc = songList[index].songSrc;
+
+    let currentSong = new Audio(currSongSrc);
 
     const playBtn = document.querySelector(".playBtn");
     const playBtnImg = document.querySelector(".playBtnImg");
@@ -34,10 +41,9 @@ const addControlsFunctionality = () => {
         musicBar.value = songProgress;
     });
 
-    musicBar.addEventListener("change", () => {
-        let changedToValue = musicBar.value;
-        currentSong.currentTime = (changedToValue * currentSong.duration) / 100;
-        musicBar.value = changedToValue;
+    musicBar.addEventListener("click", (e) => {
+        currentSong.currentTime =
+            (e.offsetX / e.srcElement.clientWidth) * currentSong.duration;
     });
 };
 
