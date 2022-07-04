@@ -4,8 +4,7 @@ const addControlsFunctionality = (index) => {
     let currentSong = document.querySelector(".audioElement");
     let playBtn = document.querySelector(".playBtn");
     let playBtnImg = document.querySelector(".playBtnImg");
-
-    let loadMusic = currentSong.setAttribute("src", songList[index].songSrc);
+    const vol = document.querySelector(".volume");
 
     currentSong.setAttribute("src", songList[index].songSrc);
     currentSong.play();
@@ -59,13 +58,11 @@ const addControlsFunctionality = (index) => {
         currentSong.setAttribute("src", songList[index].songSrc);
         currentSong.play();
     });
+
+    vol.addEventListener("click", (e) => {
+        console.log(e.offsetX / e.srcElement.clientWidth);
+        currentSong.volume = e.offsetX / e.srcElement.clientWidth;
+    });
 };
 
 export default addControlsFunctionality;
-
-// const getAccess = () => {
-//     const prevBtn = document.querySelector(".prevBtn");
-//     const nextBtn = document.querySelector(".nextBtn");
-//     const musicBar = document.querySelector(".musicBar");
-//     const volume = document.querySelector(".volume");
-// };
