@@ -54,7 +54,7 @@ const addControls = () => {
 
     prevBtnImg.src = "/dist/icons-and-images/previous-svgrepo-com.svg";
     nextBtnImg.src = "/dist/icons-and-images/next-svgrepo-com.svg";
-    playBtnImg.src = "/dist/icons-and-images/play-svgrepo-com.svg";
+    playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
 
     playBtnImg.classList.add("playBtnImg", "control-img");
     nextBtnImg.classList.add("nextBtnImg", "control-img");

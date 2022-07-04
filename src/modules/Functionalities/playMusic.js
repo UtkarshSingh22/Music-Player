@@ -1,24 +1,12 @@
 import songList from "../SongsList/songsData";
-// const getAccess = () => {
-//     const prevBtn = document.querySelector(".prevBtn");
-//     const nextBtn = document.querySelector(".nextBtn");
-//     const musicBar = document.querySelector(".musicBar");
-//     const volume = document.querySelector(".volume");
-// };
 
 const addControlsFunctionality = (index) => {
-    // let allAudiosBeingPlayed = document.querySelectorAll("audio");
-    // for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
-    //     allAudiosBeingPlayed[i].pause();
-    //     document.removeChild(allAudiosBeingPlayed[i]);
-    // }
+    let currentSong = document.querySelector(".audioElement");
+    let playBtn = document.querySelector(".playBtn");
+    let playBtnImg = document.querySelector(".playBtnImg");
 
-    let currSongSrc = songList[index].songSrc;
-
-    let currentSong = new Audio(currSongSrc);
-
-    const playBtn = document.querySelector(".playBtn");
-    const playBtnImg = document.querySelector(".playBtnImg");
+    currentSong.setAttribute("src", songList[index].songSrc);
+    currentSong.play();
 
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
@@ -47,25 +35,32 @@ const addControlsFunctionality = (index) => {
             (e.offsetX / e.srcElement.clientWidth) * currentSong.duration;
     });
 
-    const prevBtn = document.querySelector(".prevBtn");
-    const nextBtn = document.querySelector(".nextBtn");
+    // const prevBtn = document.querySelector(".prevBtn");
+    // const nextBtn = document.querySelector(".nextBtn");
 
-    nextBtn.addEventListener("click", () => {
-        if (index == songList.length - 1) {
-            index = 0;
-        } else {
-            index++;
-        }
-        let allAudiosBeingPlayed = document.querySelectorAll("audio");
-        for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
-            allAudiosBeingPlayed[i].pause();
-            document.removeChild(allAudiosBeingPlayed[i]);
-        }
+    // nextBtn.addEventListener("click", () => {
+    //     if (index == songList.length - 1) {
+    //         index = 0;
+    //     } else {
+    //         index++;
+    //     }
+    //     let allAudiosBeingPlayed = document.querySelectorAll("audio");
+    //     for (let i = 0; i < allAudiosBeingPlayed.length; i++) {
+    //         allAudiosBeingPlayed[i].pause();
+    //         document.removeChild(allAudiosBeingPlayed[i]);
+    //     }
 
-        currSongSrc = songList[index].songSrc;
+    //     currSongSrc = songList[index].songSrc;
 
-        currentSong = new Audio(currSongSrc);
-    });
+    //     currentSong = new Audio(currSongSrc);
+    // });
 };
 
 export default addControlsFunctionality;
+
+// const getAccess = () => {
+//     const prevBtn = document.querySelector(".prevBtn");
+//     const nextBtn = document.querySelector(".nextBtn");
+//     const musicBar = document.querySelector(".musicBar");
+//     const volume = document.querySelector(".volume");
+// };
