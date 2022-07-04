@@ -60,7 +60,6 @@ const addControlsFunctionality = (index) => {
     });
 
     vol.addEventListener("click", (e) => {
-        console.log(e.offsetX / e.srcElement.clientWidth);
         currentSong.volume = e.offsetX / e.srcElement.clientWidth;
     });
 };
