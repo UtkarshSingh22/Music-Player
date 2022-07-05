@@ -40,6 +40,25 @@ const addControlsFunctionality = (index) => {
 
     currentSong.addEventListener("timeupdate", () => {
         //get value in percent
+        if (currentSong.currentTime == currentSong.duration) {
+            if (index == songList.length - 1) {
+                index = 0;
+            } else {
+                index++;
+            }
+            getSongDetails(index);
+            currentSong.setAttribute("src", songList[index].songSrc);
+
+            let playPromise = currentSong.play();
+
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        currentSong.play();
+                    })
+                    .catch((error) => {});
+            }
+        }
         let songProgress =
             (currentSong.currentTime / currentSong.duration) * 100;
 
