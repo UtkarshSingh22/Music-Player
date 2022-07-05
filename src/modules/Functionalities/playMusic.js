@@ -48,6 +48,9 @@ const addControlsFunctionality = (index) => {
     const nextBtn = document.querySelector(".nextBtn");
 
     nextBtn.addEventListener("click", () => {
+        if (currentSong.paused) {
+            playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
+        }
         if (index == songList.length - 1) {
             index = 0;
         } else {
@@ -68,6 +71,9 @@ const addControlsFunctionality = (index) => {
     });
 
     prevBtn.addEventListener("click", () => {
+        if (currentSong.paused) {
+            playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
+        }
         if (index == 0) {
             index = songList.length - 1;
         } else {
