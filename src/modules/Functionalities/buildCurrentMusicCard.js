@@ -26,7 +26,6 @@ const buildSongInfo = (index) => {
 const getSongDetails = (index) => {
     const main = document.querySelector(".main");
 
-    console.log(main.lastChild.className);
     if (main.lastChild.className == "songData") {
         main.removeChild(main.lastChild);
     }

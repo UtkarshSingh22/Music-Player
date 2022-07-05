@@ -8,7 +8,16 @@ const addControlsFunctionality = (index) => {
     const vol = document.querySelector(".volume");
 
     currentSong.setAttribute("src", songList[index].songSrc);
-    currentSong.play();
+
+    let playPromise = currentSong.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                currentSong.play();
+            })
+            .catch((error) => {});
+    }
 
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
@@ -46,7 +55,16 @@ const addControlsFunctionality = (index) => {
         }
         getSongDetails(index);
         currentSong.setAttribute("src", songList[index].songSrc);
-        currentSong.play();
+
+        let playPromise = currentSong.play();
+
+        if (playPromise !== undefined) {
+            playPromise
+                .then(() => {
+                    currentSong.play();
+                })
+                .catch((error) => {});
+        }
     });
 
     prevBtn.addEventListener("click", () => {
@@ -57,7 +75,16 @@ const addControlsFunctionality = (index) => {
         }
         getSongDetails(index);
         currentSong.setAttribute("src", songList[index].songSrc);
-        currentSong.play();
+
+        let playPromise = currentSong.play();
+
+        if (playPromise !== undefined) {
+            playPromise
+                .then(() => {
+                    currentSong.play();
+                })
+                .catch((error) => {});
+        }
     });
 
     vol.addEventListener("click", (e) => {
