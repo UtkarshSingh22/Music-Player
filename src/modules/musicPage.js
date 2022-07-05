@@ -52,20 +52,11 @@ const loadMusicPage = () => {
 
     const bgImage = buildContentImg(illusSrc);
 
-    // TODO: Add function for getting below data after triggered event listeners and
-    // send the data in buildSongInfo func.
-    let src = "",
-        name = "",
-        artist = "";
-
-    const songInfo = buildSongInfo(src, name, artist);
-
     const lyrics = getLyrics();
 
     const musicPlayer = buildPlayer();
 
     main.appendChild(bgImage);
-    main.appendChild(songInfo);
     main.appendChild(lyrics);
     main.appendChild(cardsContainer);
     main.appendChild(musicPlayer);
