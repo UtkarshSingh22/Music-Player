@@ -1,7 +1,7 @@
 import loadMusicPage from "../musicPage";
 import songList from "../SongsList/songsData";
 import addControlsFunctionality from "../Functionalities/playMusic";
-import buildSongInfo from "../Functionalities/buildCurrentMusicCard";
+import getSongDetails from "../Functionalities/buildCurrentMusicCard";
 
 const getClicked = (e) => {
     if (e.target.parentElement.className == "cards") {
@@ -15,7 +15,7 @@ const getClicked = (e) => {
         }
 
         loadMusicPage();
-        buildSongInfo(songIndex);
+        getSongDetails(songIndex);
         addControlsFunctionality(songIndex);
     } else {
         return;
