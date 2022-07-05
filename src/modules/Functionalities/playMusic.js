@@ -8,6 +8,7 @@ const addControlsFunctionality = (index) => {
     const vol = document.querySelector(".volume");
     let currTime = document.querySelector(".currTime");
     const totalTime = document.querySelector(".totalTime");
+    const musicGif = document.querySelector(".music-gif");
 
     currentSong.setAttribute("src", songList[index].songSrc);
 
@@ -21,13 +22,17 @@ const addControlsFunctionality = (index) => {
             .catch((error) => {});
     }
 
+    musicGif.setAttribute("src", "/dist/icons-and-images/music.gif");
+
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
             playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
+            musicGif.setAttribute("src", "/dist/icons-and-images/music.gif");
         } else {
             currentSong.pause();
             playBtnImg.src = "/dist/icons-and-images/play-svgrepo-com.svg";
+            musicGif.setAttribute("src", "");
         }
     });
 
