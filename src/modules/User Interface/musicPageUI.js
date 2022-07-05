@@ -1,5 +1,6 @@
 import songList from "../SongsList/songsData";
 import addControlsFunctionality from "../Functionalities/playMusic";
+import getSongDetails from "../Functionalities/buildCurrentMusicCard";
 
 const addFunctionalityToCardsOnMusicPage = () => {
     const cardsParent = document.querySelector(".songCards");
@@ -15,9 +16,8 @@ const addFunctionalityToCardsOnMusicPage = () => {
                 }
             }
 
+            getSongDetails(songIndex);
             addControlsFunctionality(songIndex);
-
-            //TODO: Play music according to index
         } else {
             return;
         }

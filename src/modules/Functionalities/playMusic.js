@@ -1,4 +1,5 @@
 import songList from "../SongsList/songsData";
+import getSongDetails from "./buildCurrentMusicCard";
 
 const addControlsFunctionality = (index) => {
     let currentSong = document.querySelector(".audioElement");
@@ -43,7 +44,7 @@ const addControlsFunctionality = (index) => {
         } else {
             index++;
         }
-
+        getSongDetails(index);
         currentSong.setAttribute("src", songList[index].songSrc);
         currentSong.play();
     });
@@ -54,7 +55,7 @@ const addControlsFunctionality = (index) => {
         } else {
             index--;
         }
-
+        getSongDetails(index);
         currentSong.setAttribute("src", songList[index].songSrc);
         currentSong.play();
     });
