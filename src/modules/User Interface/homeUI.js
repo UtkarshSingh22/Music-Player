@@ -2,6 +2,7 @@ import loadMusicPage from "../musicPage";
 import songList from "../SongsList/songsData";
 import addControlsFunctionality from "../Functionalities/playMusic";
 import getSongDetails from "../Functionalities/buildCurrentMusicCard";
+import getSearchData from "../Functionalities/searchBar";
 
 const getClicked = (e) => {
     if (e.target.parentElement.className == "cards") {
@@ -22,10 +23,12 @@ const getClicked = (e) => {
     }
 };
 
-const addFunctionalityToMusicCards = () => {
+const addFunctionalityToHomeElements = () => {
     const cardsParent = document.querySelector(".music-cards");
 
     cardsParent.addEventListener("click", getClicked);
+
+    getSearchData();
 };
 
-export default addFunctionalityToMusicCards;
+export default addFunctionalityToHomeElements;
