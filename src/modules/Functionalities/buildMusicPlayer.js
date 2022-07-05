@@ -22,8 +22,17 @@ const addSongInfo = () => {
     const gif = document.createElement("img");
     const duration = document.createElement("div");
 
+    let currTime = document.createElement("div");
+    let totalTime = document.createElement("div");
+
+    currTime.classList = "currTime";
+    totalTime.classList = "totalTime";
+
     gif.classList = "music-gif";
     duration.classList = "duration";
+
+    duration.appendChild(currTime);
+    duration.appendChild(totalTime);
 
     //TODO : Add gif source
     gif.src = "";
