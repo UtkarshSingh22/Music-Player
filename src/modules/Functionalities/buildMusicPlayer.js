@@ -19,21 +19,15 @@ const addSongInfo = () => {
     const info = document.createElement("div");
     info.classList = "songDetail";
 
-    const name = document.createElement("div");
-    const artist = document.createElement("div");
     const gif = document.createElement("img");
     const duration = document.createElement("div");
 
-    name.classList = "song-name";
-    artist.classList = "artist-name";
     gif.classList = "music-gif";
     duration.classList = "duration";
 
     //TODO : Add gif source
     gif.src = "";
 
-    info.appendChild(name);
-    info.appendChild(artist);
     info.appendChild(gif);
     info.appendChild(duration);
 
