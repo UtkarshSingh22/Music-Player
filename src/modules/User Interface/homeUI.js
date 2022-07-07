@@ -6,7 +6,8 @@ import getSearchData from "../Functionalities/searchBar";
 
 const getClicked = (e) => {
     if (e.target.parentElement.className == "cards") {
-        const songName = e.target.parentElement.children[1].textContent;
+        const songName =
+            e.target.parentElement.children[1].children[0].textContent;
 
         let songIndex;
         for (let i = 0; i < songList.length; i++) {
@@ -14,7 +15,6 @@ const getClicked = (e) => {
                 songIndex = i;
             }
         }
-
         loadMusicPage();
         getSongDetails(songIndex);
         addControlsFunctionality(songIndex);

@@ -62,8 +62,6 @@ const getSearchData = () => {
                 addControlsFunctionality(indexInSongList);
             });
         }
-
-        console.log(allResults);
     });
 };
 

@@ -8,7 +8,8 @@ const addFunctionalityToCardsOnMusicPage = () => {
 
     cardsParent.addEventListener("click", (e) => {
         if (e.target.parentElement.className == "cards") {
-            const songName = e.target.parentElement.children[1].textContent;
+            const songName =
+                e.target.parentElement.children[1].children[0].textContent;
 
             let songIndex;
             for (let i = 0; i < songList.length; i++) {
