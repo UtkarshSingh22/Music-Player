@@ -22,16 +22,16 @@ const addControlsFunctionality = (index) => {
             .catch((error) => {});
     }
 
-    musicGif.setAttribute("src", "/dist/icons-and-images/music.gif");
+    musicGif.setAttribute("src", "/dist/icons/music.gif");
 
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
-            musicGif.setAttribute("src", "/dist/icons-and-images/music.gif");
+            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
+            musicGif.setAttribute("src", "/dist/icons/music.gif");
         } else {
             currentSong.pause();
-            playBtnImg.src = "/dist/icons-and-images/play-svgrepo-com.svg";
+            playBtnImg.src = "/dist/icons/play-svgrepo-com.svg";
             musicGif.setAttribute("src", "");
         }
     });
@@ -103,7 +103,7 @@ const addControlsFunctionality = (index) => {
 
     nextBtn.addEventListener("click", () => {
         if (currentSong.paused) {
-            playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
+            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
         }
         if (index == songList.length - 1) {
             index = 0;
@@ -126,7 +126,7 @@ const addControlsFunctionality = (index) => {
 
     prevBtn.addEventListener("click", () => {
         if (currentSong.paused) {
-            playBtnImg.src = "/dist/icons-and-images/pause-svgrepo-com.svg";
+            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
         }
         if (index == 0) {
             index = songList.length - 1;

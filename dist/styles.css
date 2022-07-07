@@ -21,17 +21,20 @@ body {
     z-index: 1;
     color: black;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #fff;
 }
 .company {
     display: flex;
     gap: 1vw;
 }
 .company-name {
-    font-size: 5vw;
+    font-size: 6vh;
 }
 .company-logo {
+    min-width: 70px;
     width: 4vw;
     transition: all 0.3s ease-in-out;
 }
@@ -44,8 +47,8 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap: 6vw;
-    padding-top: 20px;
+    min-width: 400px;
+    gap: 1rem;
 }
 
 .btn-nav-bar {
@@ -53,6 +56,7 @@ body {
     background-color: rgb(0, 0, 0);
     font-size: 1vw;
     cursor: pointer;
+    min-width: 120px;
     width: 12vw;
     height: 8vh;
     transition: all ease-in-out 0.3s;
@@ -73,7 +77,6 @@ body {
 
 .main {
     grid-area: 2/1/3/2;
-    z-index: 5;
     display: grid;
     grid-template: 1fr 2fr 3fr / 1fr 3fr 1fr;
 }
@@ -91,6 +94,7 @@ body {
     justify-self: center;
     align-self: start;
     z-index: 1;
+    display: flex;
     flex-wrap: wrap;
 }
 .music-cards {
@@ -100,14 +104,15 @@ body {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1vw;
-    padding-top: 8vh;
 }
 
 .cards {
     cursor: pointer;
-    width: 15vw;
     height: auto;
+    min-width: 100px;
+    width: 15vw;
     display: flex;
+    flex: 1 1 10%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -150,13 +155,14 @@ body {
 .searchBox {
     grid-area: 1/2/2/3;
     place-self: center;
+    z-index: 4;
 }
 .search-bar {
     width: 40vw;
     height: 5vh;
-    z-index: 4;
     border: 3px solid black;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
 .search-bar:focus {
@@ -164,17 +170,19 @@ body {
 }
 .results {
     position: absolute;
-    width: 50vw;
+    width: 40vw;
     height: fit-content;
     z-index: 2;
-    top: 25%;
-    left: 25%;
+    top: 31vh;
+    left: 30%;
     background-color: #fff;
 }
 .matchedStr {
-    height: 5vh;
-    border: 3px solid rgb(0, 0, 0);
-    background-color: rgb(248, 173, 60);
+    min-height: 5vh;
+    width: 40vw;
+    height: fit-content;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(247, 248, 159);
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 1em;
 }
