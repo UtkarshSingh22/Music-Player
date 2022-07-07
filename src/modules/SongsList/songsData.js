@@ -1,7 +1,7 @@
 const songList = [
     {
         name: "On & On",
-        artist: "Cartoon x HAVSUN x WAYOUT, ft. Daniel Levi",
+        artist: "Cartoon x Havsun x Wayout, ft. Daniel Levi",
         imageSrc: "/dist/song-images/on&on.jpg",
         songSrc:
             "/dist/sample-songs/Cartoon - On & On (ft. Daniel Levi)(Cartoon x HAVSUN x WAYOUT Remix) [NCS Release].mp3",
