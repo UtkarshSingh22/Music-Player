@@ -2,14 +2,6 @@ import songList from "./SongsList/songsData";
 import makeMusicCards from "./Functionalities/makeMusicCards";
 import addFunctionalityToHomeElements from "./User Interface/homeUI";
 
-// const buildContentImg = (source) => {
-//     const homeBgImg = document.createElement("img");
-//     homeBgImg.setAttribute("class", "content-img");
-//     homeBgImg.src = source;
-
-//     return homeBgImg;
-// };
-
 const buildContent = () => {
     const data = document.createElement("div");
     data.setAttribute("class", "content-data");
@@ -25,14 +17,6 @@ const getSongsList = () => {
     return list;
 };
 
-// const addHead = () => {
-//     const head = document.createElement("div");
-//     head.classList = "list-head";
-//     head.textContent = "Play music";
-
-//     return head;
-// };
-
 const addCards = () => {
     const cardsContainer = document.createElement("div");
     cardsContainer.classList = "music-cards";
@@ -41,11 +25,20 @@ const addCards = () => {
 };
 
 const addSearchBar = () => {
+    const searchBox = document.createElement("div");
+    searchBox.classList = "searchBox";
+
     const bar = document.createElement("input");
     bar.setAttribute("type", "search");
     bar.classList = "search-bar";
 
-    return bar;
+    const results = document.createElement("div");
+    results.classList = "results";
+
+    searchBox.appendChild(bar);
+    searchBox.appendChild(results);
+
+    return searchBox;
 };
 
 const loadHome = () => {
@@ -54,9 +47,6 @@ const loadHome = () => {
     while (main.hasChildNodes()) {
         main.removeChild(main.firstChild);
     }
-
-    // home-background image src
-    //const illusSrc = "/dist/Illustrations/music file2-01.png";
 
     const cardsContainer = addCards();
 
@@ -73,18 +63,14 @@ const loadHome = () => {
         index++;
     }
 
-    // const listHead = addHead();
-
     const songsList = getSongsList();
-    // songsList.appendChild(listHead);
+
     songsList.appendChild(cardsContainer);
 
-    //const bgImage = buildContentImg(illusSrc);
     const homeMsg = buildContent();
 
     const searchBar = addSearchBar();
 
-    //main.appendChild(bgImage);
     main.appendChild(homeMsg);
     main.appendChild(searchBar);
     main.appendChild(songsList);

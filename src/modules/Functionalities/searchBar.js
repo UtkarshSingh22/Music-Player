@@ -6,10 +6,9 @@ import addControlsFunctionality from "./playMusic";
 const getSearchData = () => {
     const searchBar = document.querySelector(".search-bar");
 
-    let searchResults = document.createElement("div");
-    searchResults.classList = "resultBox";
+    let searchResults = document.querySelector(".results");
 
-    const main = document.querySelector(".main");
+    const searchBox = document.querySelector(".searchBox");
 
     searchBar.addEventListener("input", (e) => {
         let inputByUser = e.target.value;
@@ -41,7 +40,7 @@ const getSearchData = () => {
 
                 searchResults.appendChild(matchedStr);
 
-                main.appendChild(searchResults);
+                searchBox.appendChild(searchResults);
             }
         }
 
