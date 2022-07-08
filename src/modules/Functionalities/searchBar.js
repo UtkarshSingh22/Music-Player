@@ -10,10 +10,18 @@ const getSearchData = () => {
 
     const searchBox = document.querySelector(".searchBox");
 
+    searchBar.addEventListener("focus", () => {});
+
     searchBar.addEventListener("input", (e) => {
         let inputByUser = e.target.value;
         inputByUser = inputByUser.toLowerCase();
 
+        if (inputByUser == "") {
+            while (searchResults.firstChild) {
+                searchResults.removeChild(searchResults.firstChild);
+            }
+            return;
+        }
         while (searchResults.firstChild) {
             searchResults.removeChild(searchResults.firstChild);
         }
