@@ -11,6 +11,7 @@ const addControlsFunctionality = (index) => {
     const musicGif = document.querySelector(".music-gif");
 
     currentSong.setAttribute("src", songList[index].songSrc);
+    playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
 
     let playPromise = currentSong.play();
 
@@ -28,11 +29,11 @@ const addControlsFunctionality = (index) => {
         if (currentSong.paused) {
             currentSong.play();
             playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
-            musicGif.setAttribute("src", "/dist/icons/music.gif");
+            musicGif.style.opacity = "1";
         } else {
             currentSong.pause();
             playBtnImg.src = "/dist/icons/play-svgrepo-com.svg";
-            musicGif.setAttribute("src", "");
+            musicGif.style.opacity = "0";
         }
     });
 

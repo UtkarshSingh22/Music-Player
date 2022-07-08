@@ -34,8 +34,7 @@ const addSongInfo = () => {
     duration.appendChild(currTime);
     duration.appendChild(totalTime);
 
-    //TODO : Add gif source
-    gif.src = "/dist/icons/music.gif";
+    gif.src = "";
 
     info.appendChild(gif);
     info.appendChild(duration);
@@ -59,7 +58,7 @@ const addControls = () => {
 
     prevBtnImg.src = "/dist/icons/back-return-svgrepo-com.svg";
     nextBtnImg.src = "/dist/icons/next-svgrepo-com.svg";
-    playBtnImg.src = "/dist/icons/play-svgrepo-com.svg";
+    playBtnImg.src = "";
 
     playBtnImg.classList.add("playBtnImg", "control-img");
     nextBtnImg.classList.add("nextBtnImg", "control-img");
