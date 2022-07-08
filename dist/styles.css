@@ -23,8 +23,8 @@ body {
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
-    background-image: linear-gradient(rgb(255, 0, 0), rgb(114, 3, 3));
-    box-shadow: 0px 2px 10px 10px rgb(109, 102, 102);
+    background-image: linear-gradient(rgb(89, 0, 255), rgb(22, 15, 51));
+    box-shadow: 0px 2px 10px 10px rgb(83, 83, 83);
 }
 .company {
     display: flex;
@@ -54,7 +54,7 @@ body {
 
 .btn-nav-bar {
     color: #fff;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     font-size: 1vw;
     cursor: pointer;
     min-width: 120px;
@@ -67,7 +67,7 @@ body {
 }
 
 .btn-nav-bar:hover {
-    box-shadow: inset 12vw 0 0 0 rgb(255, 217, 0);
+    box-shadow: inset 12vw 0 0 0 rgb(253, 2, 86);
     color: black;
 }
 
@@ -132,14 +132,18 @@ body {
     bottom: 0%;
     opacity: 0;
     transition: 0.3s ease-in-out;
-    width: 12vw;
+    width: 13vw;
     border-radius: 5px;
 }
 
 .cards:hover .musicBox {
     opacity: 1;
     color: rgb(255, 255, 255);
-    background-image: linear-gradient(to right, red, rgb(51, 51, 50));
+    background-image: linear-gradient(
+        to right,
+        rgb(17, 0, 255),
+        rgb(51, 51, 50)
+    );
 }
 
 .cards:hover .musicBox {
@@ -161,18 +165,18 @@ body {
     min-width: 170px;
     width: 40vw;
     height: 5vh;
-    border: 3px solid rgb(255, 0, 85);
+    border: 3px solid rgb(253, 2, 86);
     border-radius: 4px;
     font-size: 1rem;
     transition: all 0.2s ease-in;
     box-shadow: 10px 10px rgb(0, 0, 0);
 }
 .search-bar:hover {
-    background-color: rgb(218, 219, 219);
+    background-color: rgb(201, 201, 201);
 }
 
 .search-bar:focus {
-    background-color: rgb(255, 206, 209);
+    background-color: rgb(220, 211, 255);
 }
 .results {
     position: absolute;
@@ -200,44 +204,52 @@ body {
 .mediaPlayer {
     z-index: 3;
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
     left: 26%;
-    background-color: #fff;
+    background-image: linear-gradient(
+        to right,
+        rgb(239, 240, 245),
+        rgb(0, 45, 247)
+    );
     display: grid;
     grid-template: repeat(2, 1fr) / 1fr 2fr;
-    height: 10vw;
+    height: 5vw;
+    min-height: 30px;
     padding: 10px 2vw;
     border-radius: 60px;
-    box-shadow: 2px 2px 6px 8px rgb(150, 137, 25);
+    box-shadow: 2px 2px 10px 6px rgb(70, 70, 70);
     width: 40vw;
-    min-width: 200px;
+    min-width: 300px;
+    border: 2px solid rgb(0, 0, 0);
 }
 .musicBar {
     grid-area: 1/1/2/3;
     width: 40vw;
-    min-width: 200px;
+    min-width: 300px;
 }
 .controls {
     grid-area: 2/2/3/3;
     display: grid;
     grid-template-columns: repeat(5, 1fr) 2fr;
     place-self: center;
+    padding-left: 2vw;
+    gap: 1vw;
 }
 .volume {
     grid-column: 6/7;
     width: 8vw;
-    min-width: 60px;
+    min-width: 30px;
 }
 .songDetail {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2vw;
+    gap: 0.5vw;
 }
 .duration {
     display: flex;
     gap: 1vw;
-    font-size: 20px;
+    font-size: 1.5vw;
 }
 .songData {
     z-index: 3;
@@ -249,10 +261,14 @@ body {
 }
 .control-img {
     width: 3vw;
-    margin: 0px 1vw;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.49, 2.27, 0.47, 2.26);
+}
+.control-img:hover {
+    transform: translateY(-4px);
 }
 .music-gif {
-    width: 40px;
+    width: 3vw;
     border-radius: 50%;
 }
 
@@ -269,6 +285,20 @@ body {
 .content-img {
     z-index: 2;
     position: absolute;
-    width: 30vw;
-    top: 5vh;
+    height: 90vh;
+    bottom: 0vh;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -4px;
+
+    height: 0.5rem;
+    width: 5rem;
+}
+input::-webkit-slider-runnable-track {
+    background-color: #eb1289;
+    border-radius: 0.5rem;
+    height: 0.5rem;
 }
