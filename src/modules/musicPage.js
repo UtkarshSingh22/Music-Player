@@ -3,13 +3,6 @@ import makeMusicCards from "./Functionalities/makeMusicCards";
 import buildPlayer from "./Functionalities/buildMusicPlayer";
 import addFunctionalityToCardsOnMusicPage from "./User Interface/musicPageUI";
 
-const getLyrics = () => {
-    const lyrics = document.createElement("div");
-    lyrics.classList = "lyrics";
-
-    return lyrics;
-};
-
 const addCards = () => {
     const cardsContainer = document.createElement("div");
     cardsContainer.classList = "songCards";
@@ -33,7 +26,7 @@ const loadMusicPage = () => {
     }
 
     // home-background image src
-    const illusSrc = "";
+    const illusSrc = "/dist/Illustrations/rockstar.svg";
 
     const cardsContainer = addCards();
 
@@ -51,12 +44,9 @@ const loadMusicPage = () => {
 
     const bgImage = buildContentImg(illusSrc);
 
-    const lyrics = getLyrics();
-
     const musicPlayer = buildPlayer();
 
     main.appendChild(bgImage);
-    main.appendChild(lyrics);
     main.appendChild(cardsContainer);
     main.appendChild(musicPlayer);
 
