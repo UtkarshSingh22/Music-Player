@@ -49,6 +49,7 @@ const addControls = () => {
     const nextBtn = document.createElement("div");
     const playBtn = document.createElement("div");
 
+    const volImg = document.createElement("img");
     const volume = document.createElement("input");
     volume.value = 100;
 
@@ -72,6 +73,8 @@ const addControls = () => {
     playBtn.appendChild(playBtnImg);
     nextBtn.appendChild(nextBtnImg);
 
+    volImg.classList = "volImg";
+    volImg.src = "/dist/icons/volume-svgrepo-com (3).svg";
     volume.setAttribute("type", "range");
     volume.classList = "volume";
 
@@ -80,6 +83,7 @@ const addControls = () => {
     controls.appendChild(prevBtn);
     controls.appendChild(playBtn);
     controls.appendChild(nextBtn);
+    controls.appendChild(volImg);
     controls.appendChild(volume);
 
     return controls;

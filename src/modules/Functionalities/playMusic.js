@@ -23,7 +23,7 @@ const addControlsFunctionality = (index) => {
             .catch((error) => {});
     }
 
-    musicGif.setAttribute("src", "/dist/icons/music.gif");
+    musicGif.setAttribute("src", "/dist/icons/Music.gif");
 
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
