@@ -204,6 +204,11 @@ body {
         rgb(255, 8, 49)
     );
     box-shadow: 10px 10px rgb(0, 0, 0);
+    transition: all 0.1s ease-in-out;
+}
+
+.matchedStr:hover {
+    transform: scale(1.02, 1.02);
 }
 .mediaPlayer {
     z-index: 3;
