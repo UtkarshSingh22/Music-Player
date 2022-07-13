@@ -31,3 +31,15 @@ function getUserName() {
 function isUserSignedIn() {
     return !!getAuth().currentUser;
 }
+
+const addAuth = () => {
+    const signInBtn = document.querySelector(".signIn");
+    const signOutBtn = document.querySelector(".signOut");
+    const userName = document.querySelector(".userName");
+    const userPic = document.querySelector(".userPic");
+
+    signInBtn.addEventListener("click", signIn);
+    signOutBtn.addEventListener("click", signOutUser);
+};
+
+export default addAuth;
