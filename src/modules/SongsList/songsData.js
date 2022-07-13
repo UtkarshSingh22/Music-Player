@@ -5,7 +5,6 @@ const songList = [
         imageSrc: "/song-images/on&on.jpg",
         songSrc:
             "/sample-songs/Cartoon - On & On (ft. Daniel Levi)(Cartoon x HAVSUN x WAYOUT Remix) [NCS Release].mp3",
-        duration: "03:58",
     },
     {
         name: "Mortals",
@@ -13,14 +12,12 @@ const songList = [
         imageSrc: "/song-images/warriyo.jpg",
         songSrc:
             "/sample-songs/Warriyo - Mortals (feat. Laura Brehm) [NCS Release].mp3",
-        duration: "03:48",
     },
     {
         name: "Cradles",
         artist: "Sub Urban",
         imageSrc: "/song-images/cradles.jpg",
         songSrc: "/sample-songs/Sub Urban - Cradles [NCS Release].mp3",
-        duration: "03:29",
     },
     {
         name: "Adventures",
@@ -28,7 +25,6 @@ const songList = [
         imageSrc: "/song-images/adventures.jpg",
         songSrc:
             "/sample-songs/William Ekh - Adventures (feat. Alexa Lusader) [NCS Release].mp3",
-        duration: "03:11",
     },
     {
         name: "Set Me Free",
@@ -36,7 +32,6 @@ const songList = [
         imageSrc: "/song-images/setmefree.jpg",
         songSrc:
             "/sample-songs/Simbai & Frizzy The Streetz - Set Me Free [NCS Release].mp3",
-        duration: "02:49",
     },
     {
         name: "Heroes Tonight",
@@ -44,7 +39,6 @@ const songList = [
         imageSrc: "/song-images/janji.jpg",
         songSrc:
             "/sample-songs/Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3",
-        duration: "03:28",
     },
 ];
 
