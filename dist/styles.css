@@ -355,6 +355,7 @@ input::-webkit-slider-runnable-track {
     flex-direction: column;
     gap: 0.5vh;
     align-items: end;
+    flex-wrap: wrap;
 }
 
 .loggedIn {
@@ -367,6 +368,7 @@ input::-webkit-slider-runnable-track {
     justify-content: center;
     align-items: center;
     color: #fff;
+    gap: 0.5vw;
 }
 
 .signIn,
@@ -377,6 +379,7 @@ input::-webkit-slider-runnable-track {
     color: #fff;
     transition: all 0.3s ease-in-out;
     font-family: "Roboto", sans-serif;
+    border-radius: 3px;
 }
 .signIn {
     display: flex;
@@ -390,4 +393,14 @@ input::-webkit-slider-runnable-track {
     background-color: #fff;
     color: rgb(5, 42, 255);
     cursor: pointer;
+}
+
+.userPic {
+    width: 2vw;
+    height: auto;
+    border-radius: 50%;
+}
+.userName {
+    font-size: 2.5vh;
+    font-family: "Yeseva One", cursive;
 }
