@@ -2,6 +2,8 @@ body {
     margin: 0%;
 }
 
+/* Common page styles */
+
 .container {
     height: 100vh;
     display: grid;
@@ -76,6 +78,8 @@ body {
     grid-template: 2fr 2fr / 1fr 3fr 1fr;
     height: 82vh;
 }
+
+/* Home page styles */
 
 .content-data {
     grid-area: 1/2/2/3;
@@ -214,6 +218,9 @@ body {
 .matchedStr:hover {
     transform: scale(1.02, 1.02);
 }
+
+/* Music page element's styles */
+
 .mediaPlayer {
     z-index: 3;
     position: absolute;
@@ -336,4 +343,33 @@ input::-webkit-slider-runnable-track {
     background-color: #eb1289;
     border-radius: 0.5rem;
     height: 0.5rem;
+}
+
+/* Firebase element's styles*/
+
+.loginBtns {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vh;
+}
+
+.signIn,
+.signOut {
+    width: 6vw;
+    height: 3.5vh;
+    background-color: black;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+.signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+}
+
+.signIn:hover,
+.signOut:hover {
+    background-color: #fff;
+    color: rgb(42, 11, 90);
 }
