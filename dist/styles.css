@@ -351,6 +351,19 @@ input::-webkit-slider-runnable-track {
     display: flex;
     flex-direction: column;
     gap: 0.5vh;
+    align-items: end;
+}
+
+.loggedIn {
+    display: flex;
+    gap: 1vw;
+}
+
+.userDetails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 
 .signIn,
