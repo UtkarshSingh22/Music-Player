@@ -16,6 +16,12 @@ const buildSongInfo = (index) => {
     songWriter.classList = "artist";
     songWriter.textContent = songList[index].artist;
 
+    const playlistBtn = document.createElement("button");
+    playlistBtn.classList = "playlistBtn";
+
+    //TODO: to change as per added or not.
+    playlistBtn.src = "";
+
     data.appendChild(songImg);
     data.appendChild(songName);
     data.appendChild(songWriter);

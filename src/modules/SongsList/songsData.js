@@ -35,7 +35,7 @@ const songList = [
     },
     {
         name: "Heroes Tonight",
-        artist: "Janji, ft.Johnning",
+        artist: "Janji, ft. Johnning",
         imageSrc: "/song-images/janji.jpg",
         songSrc:
             "/sample-songs/Janji - Heroes Tonight (feat. Johnning) [NCS Release].mp3",
