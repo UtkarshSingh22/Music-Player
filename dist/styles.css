@@ -280,7 +280,6 @@ body {
 }
 .duration {
     display: flex;
-    gap: 1vw;
     font-size: 1.5vw;
     color: #fff;
 }

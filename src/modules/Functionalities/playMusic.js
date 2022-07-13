@@ -80,7 +80,8 @@ const addControlsFunctionality = (index) => {
         if (Math.floor(timeInSec / 10) == 0) {
             befSec = "0";
         }
-        currTime.textContent = befMin + timeInMins + ":" + befSec + timeInSec;
+        currTime.textContent =
+            befMin + timeInMins + ":" + befSec + timeInSec + "/";
 
         let inMins = Math.floor(currentSong.duration / 60);
         let inSec = Math.floor(currentSong.duration % 60);
