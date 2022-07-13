@@ -2,6 +2,9 @@ const makeSongBar = (name, artist, cover) => {
     const bar = document.createElement("div");
     bar.classList = "songBar";
 
+    const mainInfo = document.createElement("div");
+    mainInfo.classList = "mainInfo";
+
     const songCover = document.createElement("img");
     songCover.classList = "songCover";
 
@@ -15,9 +18,11 @@ const makeSongBar = (name, artist, cover) => {
     namePlaylist.textContent = name;
     artistPlaylist.textContent = artist;
 
+    mainInfo.appendChild(namePlaylist);
+    mainInfo.appendChild(artistPlaylist);
+
     bar.appendChild(songCover);
-    bar.appendChild(namePlaylist);
-    bar.appendChild(artistPlaylist);
+    bar.appendChild(mainInfo);
 
     return bar;
 };

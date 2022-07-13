@@ -449,6 +449,35 @@ input::-webkit-slider-runnable-track {
 .playlistParent {
     border: 3px black solid;
     width: 70%;
-    height: 90%;
+    height: 88%;
     box-shadow: 12px 12px black;
+    padding: 4px;
+    overflow-y: scroll;
+}
+
+.songBar {
+    border: 2px solid black;
+    display: flex;
+    height: fit-content;
+    padding: 4px;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.songCover {
+    width: 6vw;
+    height: auto;
+    margin-right: 1vw;
+    border-radius: 4px;
+}
+
+.namePlaylist {
+    font-size: 2vw;
+}
+.artistPlaylist {
+    font-size: 1vw;
 }

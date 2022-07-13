@@ -1,3 +1,8 @@
+import makeSongBar from "./Functionalities/addSongToPlaylist";
+import { collection, getDocs, getFirestore } from "firebase/firestore";
+import { app } from "./Firebase/firebase-config";
+import { getAuth } from "firebase/auth";
+
 const addHead = () => {
     const head = document.createElement("div");
     head.classList = "playlistHead";
@@ -13,7 +18,7 @@ const addContentsParent = () => {
     return songsParent;
 };
 
-const loadPlaylist = () => {
+const loadPlaylist = async () => {
     const main = document.querySelector(".main");
 
     const box = document.createElement("div");
@@ -25,6 +30,15 @@ const loadPlaylist = () => {
 
     const head = addHead();
     const content = addContentsParent();
+
+    const userUid = getAuth().currentUser.uid;
+
+    const querySnapshot = await getDocs(collection(getFirestore(app), userUid));
+    querySnapshot.forEach((doc) => {
+        let info = doc.data();
+        let bar = makeSongBar(info.name, info.artist, info.songCoverSource);
+        content.appendChild(bar);
+    });
 
     box.appendChild(head);
     box.appendChild(content);
