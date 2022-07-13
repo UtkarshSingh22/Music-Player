@@ -57,8 +57,8 @@ const addControls = () => {
     const nextBtnImg = document.createElement("img");
     const playBtnImg = document.createElement("img");
 
-    prevBtnImg.src = "/dist/icons/back-return-svgrepo-com.svg";
-    nextBtnImg.src = "/dist/icons/next-svgrepo-com.svg";
+    prevBtnImg.src = "/icons/back-return-svgrepo-com.svg";
+    nextBtnImg.src = "/icons/next-svgrepo-com.svg";
     playBtnImg.src = "";
 
     playBtnImg.classList.add("playBtnImg", "control-img");
@@ -74,7 +74,7 @@ const addControls = () => {
     nextBtn.appendChild(nextBtnImg);
 
     volImg.classList = "volImg";
-    volImg.src = "/dist/icons/volume-svgrepo-com (3).svg";
+    volImg.src = "/icons/volume-svgrepo-com (3).svg";
     volume.setAttribute("type", "range");
     volume.classList = "volume";
 

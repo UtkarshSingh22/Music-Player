@@ -1,0 +1,20 @@
+{
+    "firestore": {
+        "rules": "firestore.rules",
+        "indexes": "firestore.indexes.json"
+    },
+    "hosting": {
+        "public": "dist",
+        "headers": [
+            {
+                "source": "**/*.@(js|html)",
+                "headers": [
+                    {
+                        "key": "Cache-Control",
+                        "value": "max-age=0"
+                    }
+                ]
+            }
+        ]
+    }
+}

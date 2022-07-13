@@ -11,7 +11,7 @@ const addControlsFunctionality = (index) => {
     const musicGif = document.querySelector(".music-gif");
 
     currentSong.setAttribute("src", songList[index].songSrc);
-    playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
+    playBtnImg.src = "/icons/pause-svgrepo-com.svg";
 
     let playPromise = currentSong.play();
 
@@ -20,19 +20,21 @@ const addControlsFunctionality = (index) => {
             .then(() => {
                 currentSong.play();
             })
-            .catch((error) => {});
+            .catch((error) => {
+                alert(error);
+            });
     }
 
-    musicGif.setAttribute("src", "/dist/icons/Music.gif");
+    musicGif.setAttribute("src", "/icons/Music.gif");
 
     playBtn.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
-            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
+            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
             musicGif.style.opacity = "1";
         } else {
             currentSong.pause();
-            playBtnImg.src = "/dist/icons/play-svgrepo-com.svg";
+            playBtnImg.src = "/icons/play-svgrepo-com.svg";
             musicGif.style.opacity = "0";
         }
     });
@@ -57,7 +59,9 @@ const addControlsFunctionality = (index) => {
                     .then(() => {
                         currentSong.play();
                     })
-                    .catch((error) => {});
+                    .catch((error) => {
+                        alert(error);
+                    });
             }
         }
         let songProgress =
@@ -104,7 +108,7 @@ const addControlsFunctionality = (index) => {
 
     nextBtn.addEventListener("click", () => {
         if (currentSong.paused) {
-            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
+            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
         }
         if (index == songList.length - 1) {
             index = 0;
@@ -121,13 +125,15 @@ const addControlsFunctionality = (index) => {
                 .then(() => {
                     currentSong.play();
                 })
-                .catch((error) => {});
+                .catch((error) => {
+                    alert(error);
+                });
         }
     });
 
     prevBtn.addEventListener("click", () => {
         if (currentSong.paused) {
-            playBtnImg.src = "/dist/icons/pause-svgrepo-com.svg";
+            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
         }
         if (index == 0) {
             index = songList.length - 1;
@@ -144,7 +150,9 @@ const addControlsFunctionality = (index) => {
                 .then(() => {
                     currentSong.play();
                 })
-                .catch((error) => {});
+                .catch((error) => {
+                    alert(error);
+                });
         }
     });
 

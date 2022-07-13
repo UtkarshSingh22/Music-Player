@@ -26,7 +26,7 @@ const loadMusicPage = () => {
     }
 
     // home-background image src
-    const illusSrc = "/dist/Illustrations/rockstar.svg";
+    const illusSrc = "/Illustrations/rockstar.svg";
 
     const cardsContainer = addCards();
 

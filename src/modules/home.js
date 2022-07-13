@@ -37,8 +37,7 @@ const addSearchBar = () => {
 
     const searchIcon = document.createElement("img");
     searchIcon.classList = "searchIcon";
-    searchIcon.src =
-        "/dist/icons/color-lineal-magnifying-glass-svgrepo-com.svg";
+    searchIcon.src = "/icons/color-lineal-magnifying-glass-svgrepo-com.svg";
 
     searchBox.appendChild(searchIcon);
     searchBox.appendChild(bar);
