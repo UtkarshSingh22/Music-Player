@@ -29,6 +29,7 @@ body {
 .company-name {
     font-size: 6vh;
     color: #fff;
+    font-family: "Galada", cursive;
 }
 .company-logo {
     min-width: 70px;
@@ -60,6 +61,7 @@ body {
     border-radius: 4px;
     box-shadow: inset 0 0 0 0;
     outline: none;
+    font-family: "Roboto", sans-serif;
 }
 
 .btn-nav-bar:hover {
@@ -77,6 +79,7 @@ body {
     display: grid;
     grid-template: 2fr 2fr / 1fr 3fr 1fr;
     height: 82vh;
+    font-family: "Yeseva One", cursive;
 }
 
 /* Home page styles */
@@ -173,7 +176,7 @@ body {
     min-width: 170px;
     width: 40vw;
     height: 5vh;
-    border: 3px solid rgb(253, 2, 86);
+    border: 3px solid rgb(46, 16, 214);
     border-radius: 4px;
     font-size: 1rem;
     transition: all 0.2s ease-in;
@@ -373,6 +376,7 @@ input::-webkit-slider-runnable-track {
     background-color: black;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    font-family: "Roboto", sans-serif;
 }
 .signIn {
     display: flex;
@@ -384,6 +388,6 @@ input::-webkit-slider-runnable-track {
 .signIn:hover,
 .signOut:hover {
     background-color: #fff;
-    color: rgb(42, 11, 90);
+    color: rgb(5, 42, 255);
     cursor: pointer;
 }
