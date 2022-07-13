@@ -1,6 +1,4 @@
-import songList from "../SongsList/songsData";
-
-const makeSongBar = (index) => {
+const makeSongBar = (name, artist, cover) => {
     const bar = document.createElement("div");
     bar.classList = "songBar";
 
@@ -13,9 +11,9 @@ const makeSongBar = (index) => {
     const artistPlaylist = document.createElement("div");
     artistPlaylist.classList = "artistPlaylist";
 
-    songCover.src = songList[index].imageSrc;
-    namePlaylist.textContent = songList[index].name;
-    artistPlaylist.textContent = songList[index].artist;
+    songCover.src = cover;
+    namePlaylist.textContent = name;
+    artistPlaylist.textContent = artist;
 
     bar.appendChild(songCover);
     bar.appendChild(namePlaylist);
@@ -24,4 +22,4 @@ const makeSongBar = (index) => {
     return bar;
 };
 
-const addBarToPlaylist = () => {};
+export default makeSongBar;

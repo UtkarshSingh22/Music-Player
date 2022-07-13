@@ -17,13 +17,25 @@ import { isUserSignedIn } from "./authorization";
 
 const addSongToDatabase = (index) => {
     const playlistBtn = document.querySelector(".playlistBtn");
+    const playlistIcon = document.querySelector(".playlistIcon");
 
-    playlistBtn.addEventListener("click", () => {
+    playlistBtn.addEventListener("click", async () => {
         if (isUserSignedIn()) {
-            const userUid = getAuth().currentUser.uid;
+            playlistIcon.src = "/icons/noun-remove-playlist-4700647 (1).svg";
+            playlistBtn.classList = "playlistRem";
 
-            
-            await setDoc(doc(getFirestore(app), 'users', userUid), song)
+            const userUid = getAuth().currentUser.uid;
+            let songName = songList[index].name;
+            let songArtist = songList[index].artist;
+            let songSrc = songList[index].songSrc;
+            let songCover = songList[index].imageSrc;
+
+            await setDoc(doc(getFirestore(app), userUid, songName), {
+                name: songName,
+                artist: songArtist,
+                songSource: songSrc,
+                songCoverSource: songCover,
+            });
         } else {
             alert("You have to login first.");
         }

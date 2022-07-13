@@ -5,6 +5,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signOut,
+    getAdditionalUserInfo,
 } from "firebase/auth";
 
 async function signIn() {
