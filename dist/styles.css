@@ -379,6 +379,9 @@ input::-webkit-slider-runnable-track {
     transition: all 0.3s ease-in-out;
     font-family: "Roboto", sans-serif;
     border-radius: 3px;
+    min-width: fit-content;
+    min-height: fit-content;
+    font-size: 0.8vw;
 }
 .signIn {
     display: flex;
@@ -390,7 +393,7 @@ input::-webkit-slider-runnable-track {
 .signIn:hover,
 .signOut:hover {
     background-color: #fff;
-    color: rgb(5, 42, 255);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
@@ -402,4 +405,23 @@ input::-webkit-slider-runnable-track {
 .userName {
     font-size: 2.5vh;
     font-family: "Yeseva One", cursive;
+}
+
+/* Playlist page styles */
+
+.playlistBox {
+    grid-area: 1/2/3/3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playlistHead {
+    font-size: 3vw;
+}
+
+.playlistParent {
+    border: 3px black solid;
+    width: 70%;
+    height: 90%;
+    box-shadow: 12px 12px black;
 }
