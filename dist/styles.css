@@ -385,4 +385,5 @@ input::-webkit-slider-runnable-track {
 .signOut:hover {
     background-color: #fff;
     color: rgb(42, 11, 90);
+    cursor: pointer;
 }
