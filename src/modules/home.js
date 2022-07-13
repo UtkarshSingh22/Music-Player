@@ -1,7 +1,7 @@
 import songList from "./SongsList/songsData";
 import makeMusicCards from "./Functionalities/makeMusicCards";
 import addFunctionalityToHomeElements from "./User Interface/homeUI";
-import addAuth from "./Firebase/authorization";
+import { addAuth } from "./Firebase/authorization";
 
 const buildContent = () => {
     const data = document.createElement("div");

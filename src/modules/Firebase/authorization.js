@@ -69,4 +69,4 @@ const addAuth = () => {
     initFirebaseAuth();
 };
 
-export default addAuth;
+export { addAuth, isUserSignedIn };

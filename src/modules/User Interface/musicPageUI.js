@@ -2,6 +2,7 @@ import songList from "../SongsList/songsData";
 import addControlsFunctionality from "../Functionalities/playMusic";
 import getSongDetails from "../Functionalities/buildCurrentMusicCard";
 import loadMusicPage from "../musicPage";
+import addSongToDatabase from "../Firebase/addToPlaylist_Firestore";
 
 const addFunctionalityToCardsOnMusicPage = () => {
     const cardsParent = document.querySelector(".songCards");
@@ -20,6 +21,7 @@ const addFunctionalityToCardsOnMusicPage = () => {
             loadMusicPage();
             getSongDetails(songIndex);
             addControlsFunctionality(songIndex);
+            addSongToDatabase(songIndex);
         } else {
             return;
         }
