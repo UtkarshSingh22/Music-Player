@@ -292,6 +292,12 @@ body {
     justify-content: end;
     align-items: center;
 }
+.imageBox {
+    display: flex;
+    align-items: end;
+    gap: 1vw;
+}
+
 .mainImg {
     width: 18vw;
     margin-top: 5vw;
@@ -305,6 +311,23 @@ body {
 .artist {
     font-size: 1.5vw;
 }
+
+.playlistIcon {
+    width: 40px;
+    height: 40px;
+}
+.playlistBtn {
+    border: 2px solid black;
+    box-shadow: 2px 2px 4px 4px gray;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+.playlistBtn:hover {
+    cursor: pointer;
+    background-color: rgb(197, 226, 245);
+    border-radius: 10px;
+}
+
 .control-img {
     width: 3vw;
     cursor: pointer;

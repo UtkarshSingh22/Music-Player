@@ -20,9 +20,7 @@ const addControlsFunctionality = (index) => {
             .then(() => {
                 currentSong.play();
             })
-            .catch((error) => {
-                alert(error);
-            });
+            .catch((error) => {});
     }
 
     musicGif.setAttribute("src", "/icons/Music.gif");
@@ -59,9 +57,7 @@ const addControlsFunctionality = (index) => {
                     .then(() => {
                         currentSong.play();
                     })
-                    .catch((error) => {
-                        alert(error);
-                    });
+                    .catch((error) => {});
             }
         }
         let songProgress =
@@ -126,9 +122,7 @@ const addControlsFunctionality = (index) => {
                 .then(() => {
                     currentSong.play();
                 })
-                .catch((error) => {
-                    alert(error);
-                });
+                .catch((error) => {});
         }
     });
 
@@ -151,9 +145,7 @@ const addControlsFunctionality = (index) => {
                 .then(() => {
                     currentSong.play();
                 })
-                .catch((error) => {
-                    alert(error);
-                });
+                .catch((error) => {});
         }
     });
 
