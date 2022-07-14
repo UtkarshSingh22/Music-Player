@@ -2,7 +2,8 @@ import { app } from "./firebase-config";
 import songList from "../SongsList/songsData";
 import { getAuth } from "firebase/auth";
 import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
-import { isUserSignedIn } from "./authorization";
+import addToPlaylist from "./addToPlaylistByButton";
+import delSong from "./deleteSongByPlaylistButton";
 
 const addSongToDatabase = async (index) => {
     const playlistIcon = document.querySelector(".playlistIcon");
@@ -14,32 +15,13 @@ const addSongToDatabase = async (index) => {
 
     if (docSnap.exists()) {
         playlistIcon.src = "/icons/noun-remove-playlist-4700647 (1).svg";
+        playlistIcon.classList = "remPlaylist";
+        delSong(index);
     } else {
         playlistIcon.src = "/icons/noun-add-to-playlist-1565259 (1).svg";
+        playlistIcon.classList = "playlistIcon";
+        addToPlaylist(index);
     }
-
-    console.log("done");
-
-    playlistIcon.addEventListener("click", async () => {
-        if (isUserSignedIn()) {
-            playlistIcon.src = "/icons/noun-remove-playlist-4700647 (1).svg";
-
-            const userUid = getAuth().currentUser.uid;
-            let songName = songList[index].name;
-            let songArtist = songList[index].artist;
-            let songSrc = songList[index].songSrc;
-            let songCover = songList[index].imageSrc;
-
-            await setDoc(doc(getFirestore(app), userUid, songName), {
-                name: songName,
-                artist: songArtist,
-                songSource: songSrc,
-                songCoverSource: songCover,
-            });
-        } else {
-            alert("You need to login first to open the playlist");
-        }
-    });
 };
 
 export default addSongToDatabase;
