@@ -5,8 +5,8 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     signOut,
-    getAdditionalUserInfo,
 } from "firebase/auth";
+import loadHome from "../home";
 
 async function signIn() {
     let provider = new GoogleAuthProvider();
@@ -15,6 +15,7 @@ async function signIn() {
 
 function signOutUser() {
     signOut(getAuth());
+    loadHome();
 }
 
 function initFirebaseAuth() {

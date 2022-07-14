@@ -1,18 +1,7 @@
 import { app } from "./firebase-config";
 import songList from "../SongsList/songsData";
 import { getAuth } from "firebase/auth";
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    query,
-    orderBy,
-    limit,
-    onSnapshot,
-    setDoc,
-    updateDoc,
-    doc,
-} from "firebase/firestore";
+import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { isUserSignedIn } from "./authorization";
 
 const addSongToDatabase = (index) => {
@@ -37,7 +26,7 @@ const addSongToDatabase = (index) => {
                 songCoverSource: songCover,
             });
         } else {
-            alert("You have to login first.");
+            alert("You need to login first to open the playlist");
         }
     });
 };

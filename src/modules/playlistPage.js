@@ -2,6 +2,7 @@ import makeSongBar from "./Functionalities/addSongToPlaylist";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { app } from "./Firebase/firebase-config";
 import { getAuth } from "firebase/auth";
+import deleteSongFromPlaylist from "./Firebase/deleteSongFromPlaylist";
 
 const addHead = () => {
     const head = document.createElement("div");
@@ -44,6 +45,8 @@ const loadPlaylist = async () => {
     box.appendChild(content);
 
     main.appendChild(box);
+
+    deleteSongFromPlaylist();
 };
 
 export default loadPlaylist;

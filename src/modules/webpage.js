@@ -1,6 +1,7 @@
 import loadHome from "./home";
 import loadMusicPage from "./musicPage";
 import loadPlaylist from "./playlistPage";
+import { isUserSignedIn } from "./Firebase/authorization";
 
 const loadWebpage = () => {
     loadHome();
@@ -11,7 +12,13 @@ const loadWebpage = () => {
 
     homeBtn.addEventListener("click", loadHome);
     mediaPlayer.addEventListener("click", loadMusicPage);
-    playlistBtn.addEventListener("click", loadPlaylist);
+    playlistBtn.addEventListener("click", () => {
+        if (!isUserSignedIn()) {
+            alert("You need to login first to open the playlist");
+            return;
+        }
+        loadPlaylist();
+    });
 };
 
 export default loadWebpage;

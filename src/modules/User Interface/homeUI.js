@@ -3,6 +3,7 @@ import songList from "../SongsList/songsData";
 import addControlsFunctionality from "../Functionalities/playMusic";
 import getSongDetails from "../Functionalities/buildCurrentMusicCard";
 import getSearchData from "../Functionalities/searchBar";
+import addSongToDatabase from "../Firebase/addToPlaylist_Firestore";
 
 const getClicked = (e) => {
     if (e.target.parentElement.className == "cards") {
@@ -18,6 +19,7 @@ const getClicked = (e) => {
         loadMusicPage();
         getSongDetails(songIndex);
         addControlsFunctionality(songIndex);
+        addSongToDatabase(songIndex);
     } else {
         return;
     }
