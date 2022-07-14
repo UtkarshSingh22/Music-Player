@@ -315,16 +315,13 @@ body {
 .playlistIcon {
     width: 40px;
     height: 40px;
-}
-.playlistBtn,
-.playlistRem {
     border: 2px solid black;
     box-shadow: 2px 2px 4px 4px gray;
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
 }
-.playlistBtn:hover,
-.playlistRem:hover {
+
+.playlistIcon:hover {
     cursor: pointer;
     background-color: rgb(197, 226, 245);
     border-radius: 10px;

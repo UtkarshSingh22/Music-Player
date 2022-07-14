@@ -5,13 +5,11 @@ import { getFirestore, setDoc, doc } from "firebase/firestore";
 import { isUserSignedIn } from "./authorization";
 
 const addSongToDatabase = (index) => {
-    const playlistBtn = document.querySelector(".playlistBtn");
     const playlistIcon = document.querySelector(".playlistIcon");
 
-    playlistBtn.addEventListener("click", async () => {
+    playlistIcon.addEventListener("click", async () => {
         if (isUserSignedIn()) {
             playlistIcon.src = "/icons/noun-remove-playlist-4700647 (1).svg";
-            playlistBtn.classList = "playlistRem";
 
             const userUid = getAuth().currentUser.uid;
             let songName = songList[index].name;
@@ -29,6 +27,18 @@ const addSongToDatabase = (index) => {
             alert("You need to login first to open the playlist");
         }
     });
+
+    // const userUid = getAuth().currentUser.uid;
+
+    // const querySnapshot = await getDocs(collection(getFirestore(app), userUid));
+    // querySnapshot.forEach((doc) => {
+    //     let info = doc.data().name;
+    //     if (info == songList[index].name) {
+    //         playlistIcon.src = "/icons/noun-remove-playlist-4700647 (1).svg";
+    //     } else {
+    //         playlistIcon.src = "/icons/noun-add-to-playlist-1565259 (1).svg";
+    //     }
+    // });
 };
 
 export default addSongToDatabase;

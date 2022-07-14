@@ -18,7 +18,6 @@ const playPlaylistMusic = () => {
         for (let index = 0; index < songList.length; index++) {
             if (songList[index].name == songName) {
                 songIndex = index;
-                break;
             }
         }
 

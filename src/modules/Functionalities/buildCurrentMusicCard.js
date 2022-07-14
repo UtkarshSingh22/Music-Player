@@ -19,22 +19,17 @@ const buildSongInfo = (index) => {
     songWriter.classList = "artist";
     songWriter.textContent = songList[index].artist;
 
-    const playlistBtn = document.createElement("div");
-    playlistBtn.classList = "playlistBtn";
     const playlistIcon = document.createElement("img");
     playlistIcon.classList = "playlistIcon";
 
-    //TODO: to change as per added or not.
-    playlistIcon.src = "/icons/noun-add-to-playlist-1565259 (1).svg";
-    playlistBtn.appendChild(playlistIcon);
-
     imageBox.appendChild(songImg);
-    imageBox.appendChild(playlistBtn);
+    imageBox.appendChild(playlistIcon);
 
     data.appendChild(imageBox);
     data.appendChild(songName);
     data.appendChild(songWriter);
 
+    console.log("done again");
     return data;
 };
 
@@ -44,6 +39,7 @@ const getSongDetails = (index) => {
     if (main.lastChild.className == "songData") {
         main.removeChild(main.lastChild);
     }
+
     main.appendChild(buildSongInfo(index));
 };
 
