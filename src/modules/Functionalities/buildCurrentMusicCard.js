@@ -29,7 +29,6 @@ const buildSongInfo = (index) => {
     data.appendChild(songName);
     data.appendChild(songWriter);
 
-    console.log("done again");
     return data;
 };
 
