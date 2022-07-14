@@ -453,6 +453,9 @@ input::-webkit-slider-runnable-track {
     box-shadow: 12px 12px black;
     padding: 4px;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 .songBar {
@@ -460,6 +463,20 @@ input::-webkit-slider-runnable-track {
     display: flex;
     height: fit-content;
     padding: 4px;
+    background-color: rgb(231, 231, 231);
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.1s ease-in-out;
+}
+.songBar:hover {
+    cursor: pointer;
+    transform: scale(0.96, 0.96);
+    box-shadow: 6px 6px black;
+    background-color: rgb(5, 59, 209);
+    color: #fff;
+}
+.songBar:hover .remBtn {
+    background-color: rgb(195, 211, 255);
 }
 
 .mainInfo {
@@ -480,4 +497,19 @@ input::-webkit-slider-runnable-track {
 }
 .artistPlaylist {
     font-size: 1vw;
+}
+.leftParent {
+    display: flex;
+}
+
+.remBtn {
+    width: 2vw;
+    height: fit-content;
+    margin-right: 5px;
+    background-color: rgb(231, 231, 231);
+    transition: all 0.1s ease-in;
+}
+
+.remBtn:hover {
+    transform: scale(1.2, 1.2);
 }
