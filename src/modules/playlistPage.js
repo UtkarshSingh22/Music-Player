@@ -3,6 +3,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { app } from "./Firebase/firebase-config";
 import { getAuth } from "firebase/auth";
 import deleteSongFromPlaylist from "./Firebase/deleteSongFromPlaylist";
+import playPlaylistMusic from "./Functionalities/playMusicFromPlaylist";
 
 const addHead = () => {
     const head = document.createElement("div");
@@ -46,6 +47,7 @@ const loadPlaylist = async () => {
 
     main.appendChild(box);
 
+    playPlaylistMusic();
     deleteSongFromPlaylist();
 };
 
