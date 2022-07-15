@@ -21,6 +21,7 @@ const buildSongInfo = (index) => {
 
     const playlistIcon = document.createElement("img");
     playlistIcon.classList = "playlistIcon";
+    playlistIcon.src = "/icons/noun-add-to-playlist-1565259 (1).svg";
 
     imageBox.appendChild(songImg);
     imageBox.appendChild(playlistIcon);

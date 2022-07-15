@@ -8,7 +8,7 @@ import addToPlaylist from "./addToPlaylistByButton";
 const delSong = async (index) => {
     const remPlaylist = document.querySelector(".remPlaylist");
 
-    remPlaylist.addEventListener("click", async (index) => {
+    remPlaylist.addEventListener("click", async () => {
         if (isUserSignedIn()) {
             remPlaylist.src = "/icons/noun-add-to-playlist-1565259 (1).svg";
             remPlaylist.classList = "playlistIcon";
