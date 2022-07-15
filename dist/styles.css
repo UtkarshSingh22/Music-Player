@@ -512,3 +512,8 @@ input::-webkit-slider-runnable-track {
 .remBtn:hover {
     transform: scale(1.2, 1.2);
 }
+
+/* alan button styles */
+
+.alan-btn {
+}
