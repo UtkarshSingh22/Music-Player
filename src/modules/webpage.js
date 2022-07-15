@@ -2,6 +2,7 @@ import loadHome from "./home";
 import loadMusicPage from "./musicPage";
 import loadPlaylist from "./playlistPage";
 import { isUserSignedIn } from "./Firebase/authorization";
+import { signIn, signOutUser } from "./Firebase/authorization";
 
 const loadWebpage = () => {
     //Voice button commands
@@ -16,11 +17,13 @@ const loadWebpage = () => {
                 loadMusicPage();
             }
             if (commandData.command === "loadPlaylistPage") {
-                if (!isUserSignedIn()) {
-                    //add
-                } else {
-                    loadPlaylist();
-                }
+                loadPlaylist();
+            }
+            if (commandData.command === "doAuth") {
+                signIn();
+            }
+            if (commandData.command === "Logout") {
+                signOutUser();
             }
         },
         rootEl: document.getElementById("alan-btn"),

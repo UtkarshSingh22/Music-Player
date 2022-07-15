@@ -62,19 +62,6 @@ function authStateObserver(user) {
 }
 
 const addAuth = () => {
-    var alanBtnInstance = alanBtn({
-        key: "d62f1035b09dc64b1c55dcab41e5a0aa2e956eca572e1d8b807a3e2338fdd0dc/stage",
-        onCommand: function (commandData) {
-            if (commandData.command === "doAuth") {
-                signIn();
-            }
-            if (commandData.command === "Logout") {
-                signOutUser();
-            }
-        },
-        rootEl: document.getElementById("alan-btn"),
-    });
-
     const signInBtn = document.querySelector(".signIn");
     const signOutBtn = document.querySelector(".signOut");
 
@@ -84,4 +71,4 @@ const addAuth = () => {
     initFirebaseAuth();
 };
 
-export { addAuth, isUserSignedIn };
+export { addAuth, isUserSignedIn, signIn, signOutUser };
