@@ -15,57 +15,67 @@ const loadWebpage = () => {
         onCommand: function (commandData) {
             if (commandData.command === "loadHomePage") {
                 loadHome();
-            } else if (commandData.command === "loadMusic") {
+            }
+            if (commandData.command === "loadMusic") {
                 loadMusicPage();
-            } else if (commandData.command === "loadPlaylistPage") {
+            }
+            if (commandData.command === "loadPlaylistPage") {
                 if (!isUserSignedIn()) {
                     alert("You need to login first to open the playlist");
                 } else {
                     loadPlaylist();
                 }
-            } else if (commandData.command === "doAuth") {
+            }
+            if (commandData.command === "doAuth") {
                 if (!isUserSignedIn()) {
                     signIn();
                 } else {
                     alert("You need to sign out first.");
                 }
-            } else if (commandData.command === "Logout") {
+            }
+            if (commandData.command === "Logout") {
                 if (isUserSignedIn()) {
                     signOutUser();
                 } else {
                     alert("You need to sign in first.");
                 }
-            } else if (commandData.command === "playFirst") {
+            }
+            if (commandData.command === "playFirst") {
                 let songIndex = 0;
                 loadMusicPage();
                 getSongDetails(songIndex);
                 addControlsFunctionality(songIndex);
                 addSongToDatabase(songIndex);
-            } else if (commandData.command === "playSecond") {
+            }
+            if (commandData.command === "playSecond") {
                 let songIndex = 1;
                 loadMusicPage();
                 getSongDetails(songIndex);
                 addControlsFunctionality(songIndex);
                 addSongToDatabase(songIndex);
-            } else if (commandData.command === "playThird") {
+            }
+            if (commandData.command === "playThird") {
                 let songIndex = 2;
                 loadMusicPage();
                 getSongDetails(songIndex);
                 addControlsFunctionality(songIndex);
                 addSongToDatabase(songIndex);
-            } else if (commandData.command === "playFourth") {
+            }
+            if (commandData.command === "playFourth") {
                 let songIndex = 3;
                 loadMusicPage();
                 getSongDetails(songIndex);
                 addControlsFunctionality(songIndex);
                 addSongToDatabase(songIndex);
-            } else if (commandData.command === "playFifth") {
+            }
+            if (commandData.command === "playFifth") {
                 let songIndex = 4;
                 loadMusicPage();
                 getSongDetails(songIndex);
                 addControlsFunctionality(songIndex);
                 addSongToDatabase(songIndex);
-            } else if (commandData.command === "playSixth") {
+            }
+            if (commandData.command === "playSixth") {
                 let songIndex = 5;
                 loadMusicPage();
                 getSongDetails(songIndex);

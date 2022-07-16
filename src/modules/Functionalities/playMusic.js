@@ -1,6 +1,64 @@
 import songList from "../SongsList/songsData";
 import getSongDetails from "./buildCurrentMusicCard";
 
+const playPauseSong = (currentSong, playBtnImg, musicGif) => {
+    if (currentSong.paused) {
+        currentSong.play();
+        playBtnImg.src = "/icons/pause-svgrepo-com.svg";
+        musicGif.style.opacity = "1";
+    } else {
+        currentSong.pause();
+        playBtnImg.src = "/icons/play-svgrepo-com.svg";
+        musicGif.style.opacity = "0";
+    }
+};
+
+const nextSong = (currentSong, playBtnImg, index) => {
+    if (currentSong.paused) {
+        playBtnImg.src = "/icons/pause-svgrepo-com.svg";
+    }
+    if (index == songList.length - 1) {
+        index = 0;
+    } else {
+        index++;
+    }
+    getSongDetails(index);
+    currentSong.setAttribute("src", songList[index].songSrc);
+
+    let playPromise = currentSong.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                currentSong.play();
+            })
+            .catch((error) => {});
+    }
+};
+
+const prevSong = (currentSong, playBtnImg, index) => {
+    if (currentSong.paused) {
+        playBtnImg.src = "/icons/pause-svgrepo-com.svg";
+    }
+    if (index == 0) {
+        index = songList.length - 1;
+    } else {
+        index--;
+    }
+    getSongDetails(index);
+    currentSong.setAttribute("src", songList[index].songSrc);
+
+    let playPromise = currentSong.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                currentSong.play();
+            })
+            .catch((error) => {});
+    }
+};
+
 const addControlsFunctionality = (index) => {
     let currentSong = document.querySelector(".audioElement");
     let playBtn = document.querySelector(".playBtn");
@@ -9,6 +67,8 @@ const addControlsFunctionality = (index) => {
     let currTime = document.querySelector(".currTime");
     const totalTime = document.querySelector(".totalTime");
     const musicGif = document.querySelector(".music-gif");
+    const prevBtn = document.querySelector(".prevBtn");
+    const nextBtn = document.querySelector(".nextBtn");
 
     currentSong.setAttribute("src", songList[index].songSrc);
     playBtnImg.src = "/icons/pause-svgrepo-com.svg";
@@ -25,17 +85,9 @@ const addControlsFunctionality = (index) => {
 
     musicGif.setAttribute("src", "/icons/Music.gif");
 
-    playBtn.addEventListener("click", () => {
-        if (currentSong.paused) {
-            currentSong.play();
-            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
-            musicGif.style.opacity = "1";
-        } else {
-            currentSong.pause();
-            playBtnImg.src = "/icons/play-svgrepo-com.svg";
-            musicGif.style.opacity = "0";
-        }
-    });
+    playBtn.addEventListener("click", () =>
+        playPauseSong(currentSong, playBtnImg, musicGif)
+    );
 
     const musicBar = document.querySelector(".musicBar");
 
@@ -100,54 +152,13 @@ const addControlsFunctionality = (index) => {
             (e.offsetX / e.srcElement.clientWidth) * currentSong.duration;
     });
 
-    const prevBtn = document.querySelector(".prevBtn");
-    const nextBtn = document.querySelector(".nextBtn");
+    nextBtn.addEventListener("click", () =>
+        nextSong(currentSong, playBtnImg, index)
+    );
 
-    nextBtn.addEventListener("click", () => {
-        if (currentSong.paused) {
-            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
-        }
-        if (index == songList.length - 1) {
-            index = 0;
-        } else {
-            index++;
-        }
-        getSongDetails(index);
-        currentSong.setAttribute("src", songList[index].songSrc);
-
-        let playPromise = currentSong.play();
-
-        if (playPromise !== undefined) {
-            playPromise
-                .then(() => {
-                    currentSong.play();
-                })
-                .catch((error) => {});
-        }
-    });
-
-    prevBtn.addEventListener("click", () => {
-        if (currentSong.paused) {
-            playBtnImg.src = "/icons/pause-svgrepo-com.svg";
-        }
-        if (index == 0) {
-            index = songList.length - 1;
-        } else {
-            index--;
-        }
-        getSongDetails(index);
-        currentSong.setAttribute("src", songList[index].songSrc);
-
-        let playPromise = currentSong.play();
-
-        if (playPromise !== undefined) {
-            playPromise
-                .then(() => {
-                    currentSong.play();
-                })
-                .catch((error) => {});
-        }
-    });
+    prevBtn.addEventListener("click", () =>
+        prevSong(currentSong, playBtnImg, index)
+    );
 
     vol.addEventListener("click", (e) => {
         currentSong.volume = e.offsetX / e.srcElement.clientWidth;
