@@ -24,6 +24,12 @@ const addSongToDatabase = async (index) => {
             playlistIcon.classList = "playlistIcon";
             addToPlaylist(index);
         }
+    } else {
+        playlistIcon.addEventListener("click", () => {
+            if (!isUserSignedIn()) {
+                alert("You need to sign in to access your playlist.");
+            }
+        });
     }
 };
 
