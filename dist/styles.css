@@ -195,7 +195,7 @@ body {
     width: 40vw;
     height: fit-content;
     z-index: 2;
-    top: 42vh;
+    top: 46vh;
     left: 30%;
 }
 .matchedStr {
@@ -300,16 +300,16 @@ body {
 
 .mainImg {
     width: 16vw;
-    margin-top: 3vw;
-    box-shadow: -3px 2px 20px 20px rgb(0 0 0 / 67%);
+    margin-top: 5vh;
+    box-shadow: -3px 2px 20px 10px rgb(0 0 0 / 67%);
     border-radius: 15px;
 }
 .songName {
-    font-size: 2vw;
-    padding: 1vw;
+    font-size: 1.5vw;
+    padding-top: 1vh;
 }
 .artist {
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 .playlistIcon,
