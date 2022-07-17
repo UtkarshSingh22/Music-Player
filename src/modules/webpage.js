@@ -9,9 +9,8 @@ import addSongToDatabase from "./Firebase/addToPlaylist_Firestore";
 
 const loadWebpage = () => {
     //Voice button commands
-
     var alanBtnInstance = alanBtn({
-        key: "d62f1035b09dc64b1c55dcab41e5a0aa2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        key: process.env.ALAN_AI_KEY,
         onCommand: function (commandData) {
             if (commandData.command === "loadHomePage") {
                 loadHome();
