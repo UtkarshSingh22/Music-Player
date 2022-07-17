@@ -85,6 +85,7 @@ const loadWebpage = () => {
         rootEl: document.getElementById("alan-btn"),
     });
 
+    //initial load
     loadHome();
 
     const homeBtn = document.querySelector(".home-btn");
