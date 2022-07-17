@@ -3,14 +3,14 @@ import {
     getAuth,
     onAuthStateChanged,
     GoogleAuthProvider,
-    signInWithPopup,
+    signInWithRedirect,
     signOut,
 } from "firebase/auth";
 import loadHome from "../home";
 
 async function signIn() {
     let provider = new GoogleAuthProvider();
-    await signInWithPopup(getAuth(), provider);
+    await signInWithRedirect(getAuth(), provider);
 }
 
 function signOutUser() {
