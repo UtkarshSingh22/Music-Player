@@ -31,3 +31,4 @@ Tech Involved:
 - HTML, CSS and JavaScript are used for the frontend.
 - Webpack is used for bundling the modules.
 - Firebase is used for Google authorization, storing the songs for a user in a playlist and for hosting the website.
+- Alan AI for adding voice activation.
